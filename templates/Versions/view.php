@@ -31,45 +31,6 @@
                     <td><?= $this->Number->format($version->id) ?></td>
                 </tr>
             </table>
-            <div class="related">
-                <h4><?= __('Related Cards') ?></h4>
-                <?php if (!empty($version->cards)) : ?>
-                <div class="table-responsive">
-                    <table>
-                        <tr>
-                            <th><?= __('Id') ?></th>
-                            <th><?= __('CardNumber') ?></th>
-                            <th><?= __('CardName') ?></th>
-                            <th><?= __('Color') ?></th>
-                            <th><?= __('Cost') ?></th>
-                            <th><?= __('Created') ?></th>
-                            <th><?= __('Modified') ?></th>
-                            <th><?= __('Version Id') ?></th>
-                            <th><?= __('Rarity Id') ?></th>
-                            <th class="actions"><?= __('Actions') ?></th>
-                        </tr>
-                        <?php foreach ($version->cards as $cards) : ?>
-                        <tr>
-                            <td><?= h($cards->id) ?></td>
-                            <td><?= h($cards->CardNumber) ?></td>
-                            <td><?= h($cards->CardName) ?></td>
-                            <td><?= h($cards->color) ?></td>
-                            <td><?= h($cards->cost) ?></td>
-                            <td><?= h($cards->created) ?></td>
-                            <td><?= h($cards->modified) ?></td>
-                            <td><?= h($cards->version_id) ?></td>
-                            <td><?= h($cards->rarity_id) ?></td>
-                            <td class="actions">
-                                <?= $this->Html->link(__('View'), ['controller' => 'Cards', 'action' => 'view', $cards->id]) ?>
-                                <?= $this->Html->link(__('Edit'), ['controller' => 'Cards', 'action' => 'edit', $cards->id]) ?>
-                                <?= $this->Form->postLink(__('Delete'), ['controller' => 'Cards', 'action' => 'delete', $cards->id], ['confirm' => __('Are you sure you want to delete # {0}?', $cards->id)]) ?>
-                            </td>
-                        </tr>
-                        <?php endforeach; ?>
-                    </table>
-                </div>
-                <?php endif; ?>
-            </div>
         </div>
     </div>
 </div>

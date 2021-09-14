@@ -13,8 +13,6 @@
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>
                     <th><?= $this->Paginator->sort('rarity_name') ?></th>
-                    <th><?= $this->Paginator->sort('start_time') ?></th>
-                    <th><?= $this->Paginator->sort('end_time') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -23,8 +21,6 @@
                 <tr>
                     <td><?= $this->Number->format($rarity->id) ?></td>
                     <td><?= h($rarity->rarity_name) ?></td>
-                    <td><?= h($rarity->start_time) ?></td>
-                    <td><?= h($rarity->end_time) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $rarity->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $rarity->id]) ?>

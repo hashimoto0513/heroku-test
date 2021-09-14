@@ -26,14 +26,6 @@
                     <th><?= __('Id') ?></th>
                     <td><?= $this->Number->format($rarity->id) ?></td>
                 </tr>
-                <tr>
-                    <th><?= __('Start Time') ?></th>
-                    <td><?= h($rarity->start_time) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('End Time') ?></th>
-                    <td><?= h($rarity->end_time) ?></td>
-                </tr>
             </table>
             <div class="related">
                 <h4><?= __('Related Cards') ?></h4>

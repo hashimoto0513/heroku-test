@@ -4,12 +4,12 @@ declare(strict_types=1);
 namespace App\Controller;
 
 /**
- * Versions Controller
+ * Rarities Controller
  *
- * @property \App\Model\Table\VersionsTable $Versions
- * @method \App\Model\Entity\Version[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
+ * @property \App\Model\Table\RaritiesTable $Rarities
+ * @method \App\Model\Entity\Rarity[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
-class VersionsController extends AppController
+class RaritiesController extends AppController
 {
     /**
      * Index method
@@ -18,25 +18,25 @@ class VersionsController extends AppController
      */
     public function index()
     {
-        $versions = $this->paginate($this->Versions);
+        $rarities = $this->paginate($this->Rarities);
 
-        $this->set(compact('versions'));
+        $this->set(compact('rarities'));
     }
 
     /**
      * View method
      *
-     * @param string|null $id Version id.
+     * @param string|null $id Rarity id.
      * @return \Cake\Http\Response|null|void Renders view
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function view($id = null)
     {
-        $version = $this->Versions->get($id, [
+        $rarity = $this->Rarities->get($id, [
             'contain' => ['Cards'],
         ]);
 
-        $this->set(compact('version'));
+        $this->set(compact('rarity'));
     }
 
     /**
@@ -46,58 +46,58 @@ class VersionsController extends AppController
      */
     public function add()
     {
-        $version = $this->Versions->newEmptyEntity();
+        $rarity = $this->Rarities->newEmptyEntity();
         if ($this->request->is('post')) {
-            $version = $this->Versions->patchEntity($version, $this->request->getData());
-            if ($this->Versions->save($version)) {
-                $this->Flash->success(__('The version has been saved.'));
+            $rarity = $this->Rarities->patchEntity($rarity, $this->request->getData());
+            if ($this->Rarities->save($rarity)) {
+                $this->Flash->success(__('The rarity has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The version could not be saved. Please, try again.'));
+            $this->Flash->error(__('The rarity could not be saved. Please, try again.'));
         }
-        $this->set(compact('version'));
+        $this->set(compact('rarity'));
     }
 
     /**
      * Edit method
      *
-     * @param string|null $id Version id.
+     * @param string|null $id Rarity id.
      * @return \Cake\Http\Response|null|void Redirects on successful edit, renders view otherwise.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function edit($id = null)
     {
-        $version = $this->Versions->get($id, [
+        $rarity = $this->Rarities->get($id, [
             'contain' => [],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $version = $this->Versions->patchEntity($version, $this->request->getData());
-            if ($this->Versions->save($version)) {
-                $this->Flash->success(__('The version has been saved.'));
+            $rarity = $this->Rarities->patchEntity($rarity, $this->request->getData());
+            if ($this->Rarities->save($rarity)) {
+                $this->Flash->success(__('The rarity has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The version could not be saved. Please, try again.'));
+            $this->Flash->error(__('The rarity could not be saved. Please, try again.'));
         }
-        $this->set(compact('version'));
+        $this->set(compact('rarity'));
     }
 
     /**
      * Delete method
      *
-     * @param string|null $id Version id.
+     * @param string|null $id Rarity id.
      * @return \Cake\Http\Response|null|void Redirects to index.
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
     public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);
-        $version = $this->Versions->get($id);
-        if ($this->Versions->delete($version)) {
-            $this->Flash->success(__('The version has been deleted.'));
+        $rarity = $this->Rarities->get($id);
+        if ($this->Rarities->delete($rarity)) {
+            $this->Flash->success(__('The rarity has been deleted.'));
         } else {
-            $this->Flash->error(__('The version could not be deleted. Please, try again.'));
+            $this->Flash->error(__('The rarity could not be deleted. Please, try again.'));
         }
 
         return $this->redirect(['action' => 'index']);

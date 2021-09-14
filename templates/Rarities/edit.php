@@ -23,8 +23,6 @@
                 <legend><?= __('Edit Rarity') ?></legend>
                 <?php
                     echo $this->Form->control('rarity_name');
-                    echo $this->Form->control('start_time');
-                    echo $this->Form->control('end_time');
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

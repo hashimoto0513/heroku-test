@@ -77,7 +77,8 @@ class CardsTable extends Table
         $validator
             ->scalar('CardName')
             ->maxLength('CardName', 30)
-            ->allowEmptyString('CardName');
+            ->allowEmptyString('CardName')
+            ->add('CardName', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
 
         $validator
             ->scalar('color')
@@ -102,6 +103,7 @@ class CardsTable extends Table
      */
     public function buildRules(RulesChecker $rules): RulesChecker
     {
+        $rules->add($rules->isUnique(['CardName']), ['errorField' => 'CardName']);
         $rules->add($rules->existsIn(['version_id'], 'Versions'), ['errorField' => 'version_id']);
         $rules->add($rules->existsIn(['rarity_id'], 'Rarities'), ['errorField' => 'rarity_id']);
 

@@ -10,8 +10,6 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string $rarity_name
- * @property \Cake\I18n\FrozenTime|null $start_time
- * @property \Cake\I18n\FrozenTime|null $end_time
  *
  * @property \App\Model\Entity\Card[] $cards
  */
@@ -28,8 +26,6 @@ class Rarity extends Entity
      */
     protected $_accessible = [
         'rarity_name' => true,
-        'start_time' => true,
-        'end_time' => true,
         'cards' => true,
     ];
 }

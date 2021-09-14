@@ -27,12 +27,8 @@
                     <td><?= h($card->color) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Version') ?></th>
-                    <td><?= $card->has('version') ? $this->Html->link($card->version->name, ['controller' => 'Versions', 'action' => 'view', $card->version->id]) : '' ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Rarity') ?></th>
-                    <td><?= $card->has('rarity') ? $this->Html->link($card->rarity->id, ['controller' => 'Rarities', 'action' => 'view', $card->rarity->id]) : '' ?></td>
+                    <th><?= __('Cost') ?></th>
+                    <td><?= h($card->cost) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Id') ?></th>
@@ -41,10 +37,6 @@
                 <tr>
                     <th><?= __('CardNumber') ?></th>
                     <td><?= $this->Number->format($card->CardNumber) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Cost') ?></th>
-                    <td><?= $this->Number->format($card->cost) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Created') ?></th>

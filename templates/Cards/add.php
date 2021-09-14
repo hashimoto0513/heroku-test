@@ -2,8 +2,6 @@
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Card $card
- * @var \Cake\Collection\CollectionInterface|string[] $versions
- * @var \Cake\Collection\CollectionInterface|string[] $rarities
  */
 ?>
 <div class="row">
@@ -19,12 +17,14 @@
             <fieldset>
                 <legend><?= __('Add Card') ?></legend>
                 <?php
+                    echo $this->Form->select('rarity_id',$rarities);
+                    echo $this->Form->control('version_id');
+                    echo $this->Form->select('version_id',$names);
+                    echo $this->Form->select('version_id',$versions);
                     echo $this->Form->control('CardNumber');
                     echo $this->Form->control('CardName');
-                    echo $this->Form->control('color');
-                    echo $this->Form->control('cost');
-                    echo $this->Form->control('version_id', ['options' => $versions]);
-                    echo $this->Form->control('rarity_id', ['options' => $rarities]);
+                    echo $this->Form->select('color',$options);
+                    echo $this->Form->select('cost',$array);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>
