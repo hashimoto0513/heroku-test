@@ -21,17 +21,13 @@
             <?= $this->Form->create($card) ?>
             <fieldset>
                 <legend><?= __('Edit Card') ?></legend>
-                <h3>Rarity</h3>
                 <?php
-                    echo $this->Form->select('rarity_id',$rarities);
-                ?>
-                <h3>Version</h3>
-                <?php
+                    echo $this->Form->label('Rarity');
+                    echo $this->Form->select('rarity_id',$rarities,['label' => 'Number']);
+                    echo $this->Form->label('version');
                     echo $this->Form->select('version_id',$names);
-                ?>
-                <?php
                     echo $this->Form->select('version_id',$versions);
-                    echo $this->Form->control('CardNumber');
+                    echo $this->Form->control('CardNumber',['label' => 'Number']);
                     echo $this->Form->control('CardName');
                     echo $this->Form->select('color',$options);
                     echo $this->Form->control('cost');
