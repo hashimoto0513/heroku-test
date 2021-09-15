@@ -41,8 +41,8 @@ class RaritiesFixture extends TestFixture
             [
                 'id' => 1,
                 'rarity_name' => 'Lorem ipsum dolor sit amet',
-                'start_time' => 1631602498,
-                'end_time' => 1631602498,
+                'start_time' => 1631666803,
+                'end_time' => 1631666803,
             ],
         ];
         parent::init();

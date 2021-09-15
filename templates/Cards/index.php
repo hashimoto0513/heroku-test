@@ -48,7 +48,7 @@
             <thead>
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>
-                    <th><?= $this->Paginator->sort('rarity') ?></th>
+                    <!-- <th><?= $this->Paginator->sort('rarity') ?></th> -->
                     <th><?= $this->Paginator->sort('version_name') ?></th>
                     <th><?= $this->Paginator->sort('short_name') ?></th>
                     <th><?= $this->Paginator->sort('CardNumber') ?></th>
