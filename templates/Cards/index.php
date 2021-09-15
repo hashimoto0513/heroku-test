@@ -48,7 +48,7 @@
             <thead>
                 <tr>
                     <th><?= $this->Paginator->sort('id') ?></th>
-                    <!-- <th><?= $this->Paginator->sort('rarity') ?></th> -->
+                    <th><?= $this->Paginator->sort('rarity') ?></th>
                     <th><?= $this->Paginator->sort('version_name') ?></th>
                     <th><?= $this->Paginator->sort('short_name') ?></th>
                     <th><?= $this->Paginator->sort('CardNumber') ?></th>
@@ -62,7 +62,7 @@
                 <?php foreach ($cards as $card): ?>
                 <tr>
                     <td><?= $this->Number->format($card->id) ?></td>
-                    <!-- <td><?= h($card->rarity->rarity_name) ?></td> -->
+                    <td><?= h($card->rarity->rarity_name) ?></td>
                     <td><?= h($card->version->name) ?></td>
                     <td><?= h($card->version->short_name) ?></td>
                     <td><?= $this->Number->format($card->CardNumber) ?></td>

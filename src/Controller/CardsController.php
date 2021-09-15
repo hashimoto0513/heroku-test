@@ -32,8 +32,9 @@ class CardsController extends AppController
         ]);
 
         //CardsTableの全体情報を呼び出し
-        $cards = $this->Cards->find('all')->contain('Versions');
-        // $cards = $this->cards->find('all')->contain('Rarity');
+        $cards = $this->Cards->find('all', ['contain' => ['Versions', 'Rarities']]);
+        // $cards = $this->cards->find('all')->contain('Rarities');
+
         //post情報の有無をチェック
         if($this->request->getData()){
             //post情報のkeywordの有無をチェック

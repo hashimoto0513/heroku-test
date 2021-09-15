@@ -23,6 +23,10 @@
                     <td><?= h($card->CardName) ?></td>
                 </tr>
                 <tr>
+                    <th><?= __('CardName') ?></th>
+                    <td><?= h($card->CardName) ?></td>
+                </tr>
+                <tr>
                     <th><?= __('Color') ?></th>
                     <td><?= h($card->color) ?></td>
                 </tr>
