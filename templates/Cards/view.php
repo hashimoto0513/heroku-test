@@ -19,8 +19,12 @@
             <h3><?= h($card->id) ?></h3>
             <table>
                 <tr>
-                    <th><?= __('CardName') ?></th>
-                    <td><?= h($card->CardName) ?></td>
+                    <th><?= __('rarty') ?></th>
+                    <td><?= h($card->rarity_id) ?></td>
+                </tr>
+                <tr>
+                    <th><?= __('versions') ?></th>
+                    <td><?= h($card->version_id) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('CardName') ?></th>

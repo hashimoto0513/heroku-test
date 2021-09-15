@@ -98,6 +98,21 @@ class CardsController extends AppController
      */
     public function view($id = null)
     {
+        $this->loadModel('Versions');
+
+        $versions = $this->Versions->find('list',[
+            'keyField' => 'id',
+            'valueField' => 'short_name'
+        ]);
+
+        $this->loadModel('Rarities');
+
+        $rarities = $this->Rarities->find('list',[
+            'keyField' => 'id',
+            'valueField' => 'rarity_name'
+        ]);
+
+
         $card = $this->Cards->get($id, [
             'contain' => [],
         ]);
