@@ -16,15 +16,15 @@
     </aside>
     <div class="column-responsive column-80">
         <div class="cards view content">
-            <h3><?= h($card->id) ?></h3>
+            <h3><?= h($card->CardName) ?></h3>
             <table>
                 <tr>
                     <th><?= __('rarty') ?></th>
-                    <td><?= h($card->rarity_id) ?></td>
+                    <td><?= h($card->rarity->rarity_name) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('versions') ?></th>
-                    <td><?= h($card->version_id) ?></td>
+                    <td><?= h($card->version->name) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('CardName') ?></th>

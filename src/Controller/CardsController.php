@@ -100,24 +100,26 @@ class CardsController extends AppController
     {
         $this->loadModel('Versions');
 
-        $versions = $this->Versions->find('list',[
+        $versions = $this->Versions->find('all',[
             'keyField' => 'id',
             'valueField' => 'short_name'
         ]);
 
         $this->loadModel('Rarities');
 
-        $rarities = $this->Rarities->find('list',[
+        $rarities = $this->Rarities->find('all',[
             'keyField' => 'id',
             'valueField' => 'rarity_name'
         ]);
 
 
         $card = $this->Cards->get($id, [
-            'contain' => [],
+            'contain' => ['Versions', 'Rarities'],
         ]);
+        // ['contain' => ['Versions', 'Rarities']]
+        // $card = $this->Cards->find('all', ['contain'=>'rarities']);
 
-        $this->set(compact('card'));
+        $this->set(compact('card','versions','rarities'));
     }
 
     /**
