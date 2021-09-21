@@ -4,42 +4,64 @@
  * @var \App\Model\Entity\Card[]|\Cake\Collection\CollectionInterface $cards
  */
 ?>
+
 <?php  $this->Html->css('reset', ['block' => true]); ?>
 <?php  $this->Html->css('my', ['block' => true]); ?>
-<div class="card-search">
+<!-- <div class="card-search"> -->
     <!-- post情報として送るFormを生成 -->
-    <?php echo $this->Form->create(null, ['type' => 'post']); ?>
-    <h3 class="search-title"><?= __('詳細検索') ?></h3>
-    </ul>　<!-- keyword情報を設定 -->
-        <div>
+    <body>
+        <!-- header -->
+        <div class="header">
+            <div class="header-inner">
+                <h1 class="site-title"><a href="">デジモンカード検索</a></h1>
+                <nav class="header-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="">Edit</a></li>
+                        <li class="nav-item"><a href="">Version</a></li>
+                        <li class="nav-item"><a href="">Rarty</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- //header -->
+        <!-- main -->
+        <div class="main">
+            <div class="copy-container">
+                <div class="item">カード検索</div>
+            </div>
+        </div>
+
+            <h1 class="search-wrapper"><?php echo $this->Form->create(null, ['type' => 'post'],); ?></h1>　<!-- keyword情報を設定 -->
+            <div>
+                <?php
+                    echo 'カードネーム';
+                    echo $this->Form->text('keyword');
+                ?>
+            </div>
+            <!-- color情報を設定 -->
+            <!-- color情報を設定(チェックボックス) -->
+            <div class="color-search">
             <?php
-                echo 'カードネーム';
-                echo $this->Form->text('keyword');
-            ?>
-        </div>
-        <!-- color情報を設定 -->
-        <!-- color情報を設定(チェックボックス) -->
-        <div class="color-search">
-        <?php
-            echo $this->Form->select('color', $options, [
-                'multiple' => 'checkbox'
-            ]);
-            ?>
-        </div>
-        <!-- cost情報を設定 -->
-        <div>
+                echo $this->Form->select('color', $options, [
+                    'multiple' => 'checkbox'
+                ]);
+                ?>
+            </div>
+            <!-- cost情報を設定 -->
+            <div>
+                <?php
+                    echo 'コスト';
+                    echo $this->Form->select('cost',$array,['default' => '0']);
+                    echo $this->Form->select('end_cost',$array,['default' => $num]);
+                ?>
+            </div>
+            <!-- post情報送信ボタンの設置＆post情報用のform終了を宣言 -->
             <?php
-                echo 'コスト';
-                echo $this->Form->select('cost',$array,['default' => '0']);
-                echo $this->Form->select('end_cost',$array,['default' => $num]);
+                echo $this->Form->submit('検索');
+                echo $this->Form->end();
             ?>
-        </div>
-        <!-- post情報送信ボタンの設置＆post情報用のform終了を宣言 -->
-        <?php
-            echo $this->Form->submit('検索');
-            echo $this->Form->end();
-    ?>
-</div>
+        </main>
+<!-- </div> -->
 <div class="cards index content">
 <?= $this->Html->link(__('New Card'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     <h3><?= __('カード') ?></h3>
@@ -79,5 +101,6 @@
             </tbody>
         </table>
     </div>
+    </body>
 </div>
 </div>
