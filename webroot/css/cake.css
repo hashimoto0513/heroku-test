@@ -1,14 +1,19 @@
 /* Miligram overrides */
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 400;
+    font-weight: bold;
+    color: black;
+}
+
+a {
+    color: black;
 }
 
 /* header */
 .header{
     color: #fff;
     height: 90px;
-    border: solid;
+    border: solid 0.1rem;
     border-color: black;
 }
 .site-title{
@@ -23,17 +28,59 @@ body {
 .li{
     float: left;
 }
-.main {
-    padding: 20px 20px ;
-}
+
+/* main */
 .copy-container h3 {
+    padding: 20px 20px;
+    border: solid 0.1rem;
+    width: 200px;
+    margin-top: 10px;
+}
+.version-select{
+    padding-right: 20px;
+    width: 150px;
+    float: left;
+    font-size: 15px;
+}
+.rearty-search{
+    width: 100px;
+    padding-right: 20px;
+    font-size: 15px;
+}
+.cardname-search{
+    width: 400px;
+    font-size: 15px;
+}
+.cost-search{
+    width: 90px;
+    font-size: 15px;
+}
+.color-search{
+    display: inline-block;
+    font-size: 15px;
+}
+.search-item {
+    float: left;
+    font-size: 15px;
+    /* float: right; */
+}
+.checkbox {
+    display: inline-block;
+    padding-right: 20px;
+}
+
+    /* .main {
+    padding: 20px 20px ;
+} */
+/* .copy-container h3 {
     border: solid;
     width: 200px;
     height: 60px;
     text-align: center;
-    /* vertical-align: middle; */
-    /* display: table-cell; */
-}
+    border: solid;
+    vertical-align: middle;
+    display: table-cell;
+} */
 /* .copy-container h3 {
     margin-top: 10px;
     width: 200px;
@@ -92,7 +139,7 @@ body {
     transition: .3s;
 } */
 /* main */
-.fv{
+/* .fv{
     height: 100vh;
     min-height: 550px;
     position: relative;
@@ -352,4 +399,4 @@ th {
     .desc:after {
         content: " \2190";
     }
-}
+} */

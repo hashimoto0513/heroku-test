@@ -25,41 +25,66 @@
         </div>
         <!-- //header -->
         <!-- main -->
-        <div class="main">
-            <div class="copy-container">
-                <div class="item">カード検索</div>
-            </div>
-        </div>
-
-            <h1 class="search-wrapper"><?php echo $this->Form->create(null, ['type' => 'post'],); ?></h1>　<!-- keyword情報を設定 -->
-            <div>
+        <main>
+            <div class="main">
+                <div>
+                    <div class="copy-container">
+                        <h3>カード検索</h3>
+                    </div>
+                </div>
+                <div class="search-item">
+                    <div class="version-search">
+                        <div class="version-select"><?php
+                            echo '収録弾';
+                            echo $this->Form->select('versions');
+                        ?></div>
+                    </div>
+                </div>
+                <div class="search-item">
+                    <div class="rearty-search">
+                        <?php
+                            echo 'レアリティ';
+                            echo $this->Form->select('rarities');
+                        ?>
+                    </div>
+                </div>
+                <?php echo $this->Form->create(null, ['type' => 'post'],); ?>　<!-- keyword情報を設定 -->
+                <div class="search-item">
+                    <div class="cardname-search">
+                        <?php
+                            echo 'カードネーム';
+                            echo $this->Form->text('keyword');
+                        ?>
+                    </div>
+                </div>
+                <!-- cost情報を設定 -->
+                <div class="search-item">
+                    <div class="cost-search">
+                        <?php
+                            echo 'コスト';
+                            echo $this->Form->select('cost',$array,['default' => '0']);
+                            echo $this->Form->select('end_cost',$array,['default' => $num]);
+                        ?>
+                    </div>
+                </div>
+                    <!-- color情報を設定 -->
+                    <!-- color情報を設定(チェックボックス) -->
+                <div class="search-item2">
+                    <div class="color-search">
+                        <?php
+                            echo '色';
+                            echo $this->Form->select('color', $options, [
+                                'multiple' => 'checkbox'
+                            ]);
+                        ?>
+                    </div>
+                </div>
+                <!-- post情報送信ボタンの設置＆post情報用のform終了を宣言 -->
                 <?php
-                    echo 'カードネーム';
-                    echo $this->Form->text('keyword');
+                    echo $this->Form->submit('検索');
+                    echo $this->Form->end();
                 ?>
             </div>
-            <!-- color情報を設定 -->
-            <!-- color情報を設定(チェックボックス) -->
-            <div class="color-search">
-            <?php
-                echo $this->Form->select('color', $options, [
-                    'multiple' => 'checkbox'
-                ]);
-                ?>
-            </div>
-            <!-- cost情報を設定 -->
-            <div>
-                <?php
-                    echo 'コスト';
-                    echo $this->Form->select('cost',$array,['default' => '0']);
-                    echo $this->Form->select('end_cost',$array,['default' => $num]);
-                ?>
-            </div>
-            <!-- post情報送信ボタンの設置＆post情報用のform終了を宣言 -->
-            <?php
-                echo $this->Form->submit('検索');
-                echo $this->Form->end();
-            ?>
         </main>
 <!-- </div> -->
 <div class="cards index content">
