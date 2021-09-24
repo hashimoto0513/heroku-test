@@ -73,6 +73,7 @@ class CardsController extends AppController
                 }
         $num--;
 
+
         $options = [
             '赤' => '赤',
             '青' => '青',

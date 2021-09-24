@@ -29,7 +29,7 @@
         <main>
             <div class="search">
                 <div>
-                    <div class="copy-container">
+                    <div class="search-container">
                         <h3>カード検索</h3>
                     </div>
                 </div>
@@ -90,7 +90,7 @@
 
 
             <!-- </div> -->
-            <div class-"results">
+            <div class="results">
                 <div class="cards index content">
                 <?= $this->Html->link(__('New Card'), ['action' => 'add'], ['class' => 'button float-right']) ?>
                     <h3><?= __('カード') ?></h3>

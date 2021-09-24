@@ -22,19 +22,19 @@ a {
 .header{
     padding: 19px 30px;
     height: 90px;
-    width: 100%;
+    width: 960px;
     top: 0;
     left: 50%;
     box-sizing: border-box;
     border: black solid 0.1rem;
     background-color: darkgray;
+    margin: 0 auto;
 }
 .header-inner{
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: border-box;
-    margin: 0 auto;
 }
 .site-title{
     font-size: 3.6rem;
@@ -46,13 +46,37 @@ a {
 .nav-item{
     margin-right: 30px;
 }
-
+.search-container{
+    background-color: bisque;
+    padding: 10px 10px;
+    margin-top: 20px;
+    width: 180px;
+    border: black solid 0.1rem;
+}
+.search-container h3 {
+    font-size: 30px;
+}
 .search {
+    width:960px;
+    margin: 0 auto;
     background-color: darkslateblue;
 }
 .results{
+    width:960px;
+    margin: 0 auto;
     background-color: aquamarine;
+    position: static;
 }
+.search-item{
+    padding: 10px;
+    font-size: 20px;
+}
+.version-select{
+}
+.search-item p{
+    padding-bottom: 5px;
+}
+
 /* .header{
     position: absolute;
     color: #fff;
