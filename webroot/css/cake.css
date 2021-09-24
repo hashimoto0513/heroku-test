@@ -1,8 +1,17 @@
 /* Miligram overrides */
+html{
+    font-size: 62.5%;
+}
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: bold;
-    color: black;
+    color: #171717;
+    font-size: 1.6rem;
+}
+
+img{
+    width: 100%;
+    vertical-align: bottom;
 }
 
 a {
@@ -11,63 +20,119 @@ a {
 
 /* header */
 .header{
+    padding: 19px 30px;
+    height: 90px;
+    width: 100%;
+    top: 0;
+    left: 50%;
+    box-sizing: border-box;
+    border: black solid 0.1rem;
+    background-color: darkgray;
+}
+.header-inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: border-box;
+    margin: 0 auto;
+}
+.site-title{
+    font-size: 3.6rem;
+}
+.nav-list{
+    display: flex;
+    margin-right: 30px;
+}
+.nav-item{
+    margin-right: 30px;
+}
+
+.search {
+    background-color: darkslateblue;
+}
+.results{
+    background-color: aquamarine;
+}
+/* .header{
+    position: absolute;
     color: #fff;
     height: 90px;
     border: solid 0.1rem;
     border-color: black;
+    background-color: darkgreen;
+    padding-left: 20px;
+    float: left;
 }
 .site-title{
     font-size: 36px;
-    padding: 20px 40px;
     float: left;
+    margin: auto 0;
 }
 .nav-item{
     float: left;
     padding: 33px 20px;
+    background-color: darkkhaki;
 }
 .li{
     float: left;
-}
+} */
 
 /* main */
+/* .main {
+    border: solid black;
+    background-color: darkgray;
+}
 .copy-container h3 {
     padding: 20px 20px;
     border: solid 0.1rem;
     width: 200px;
     margin-top: 10px;
+    background-color: blanchedalmond;
 }
 .version-select{
     padding-right: 20px;
     width: 150px;
     float: left;
     font-size: 15px;
+    background-color: blue;
 }
-.rearty-search{
+.rarity-search{
     width: 100px;
     padding-right: 20px;
     font-size: 15px;
+    background-color: blueviolet;
 }
 .cardname-search{
     width: 400px;
     font-size: 15px;
+    padding-right: 20px;
+    background-color: brown;
 }
 .cost-search{
     width: 90px;
     font-size: 15px;
+
+    display: inline-block;
+    background-color: burlywood;
 }
 .color-search{
     display: inline-block;
     font-size: 15px;
+    background-color: cadetblue;
+}
+.color-search p{
+    font-size: 15px;
+    background-color: chartreuse;
 }
 .search-item {
     float: left;
     font-size: 15px;
-    /* float: right; */
+    background-color: chocolate;
 }
 .checkbox {
     display: inline-block;
     padding-right: 20px;
-}
+} */
 
     /* .main {
     padding: 20px 20px ;

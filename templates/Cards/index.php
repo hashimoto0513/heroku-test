@@ -24,9 +24,10 @@
             </div>
         </div>
         <!-- //header -->
+
         <!-- main -->
         <main>
-            <div class="main">
+            <div class="search">
                 <div>
                     <div class="copy-container">
                         <h3>カード検索</h3>
@@ -34,16 +35,16 @@
                 </div>
                 <div class="search-item">
                     <div class="version-search">
+                        <p>収録弾</p>
                         <div class="version-select"><?php
-                            echo '収録弾';
                             echo $this->Form->select('versions');
                         ?></div>
                     </div>
                 </div>
                 <div class="search-item">
-                    <div class="rearty-search">
-                        <?php
-                            echo 'レアリティ';
+                    <div class="rarity-search">
+                        <p>レアリティ</p>
+                        <div class="rarity-select"><?php
                             echo $this->Form->select('rarities');
                         ?>
                     </div>
@@ -51,8 +52,8 @@
                 <?php echo $this->Form->create(null, ['type' => 'post'],); ?>　<!-- keyword情報を設定 -->
                 <div class="search-item">
                     <div class="cardname-search">
+                        <p>カードネーム</p>
                         <?php
-                            echo 'カードネーム';
                             echo $this->Form->text('keyword');
                         ?>
                     </div>
@@ -60,19 +61,20 @@
                 <!-- cost情報を設定 -->
                 <div class="search-item">
                     <div class="cost-search">
+                        <p>コスト</p>
                         <?php
-                            echo 'コスト';
                             echo $this->Form->select('cost',$array,['default' => '0']);
+                            echo "～";
                             echo $this->Form->select('end_cost',$array,['default' => $num]);
                         ?>
                     </div>
                 </div>
                     <!-- color情報を設定 -->
                     <!-- color情報を設定(チェックボックス) -->
-                <div class="search-item2">
+                <div class="search-item">
                     <div class="color-search">
+                        <p>色</p>
                         <?php
-                            echo '色';
                             echo $this->Form->select('color', $options, [
                                 'multiple' => 'checkbox'
                             ]);
@@ -85,47 +87,50 @@
                     echo $this->Form->end();
                 ?>
             </div>
+
+
+            <!-- </div> -->
+            <div class-"results">
+                <div class="cards index content">
+                <?= $this->Html->link(__('New Card'), ['action' => 'add'], ['class' => 'button float-right']) ?>
+                    <h3><?= __('カード') ?></h3>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th><?= $this->Paginator->sort('id') ?></th>
+                                    <th><?= $this->Paginator->sort('rarity') ?></th>
+                                    <th><?= $this->Paginator->sort('version_name') ?></th>
+                                    <th><?= $this->Paginator->sort('short_name') ?></th>
+                                    <th><?= $this->Paginator->sort('CardNumber') ?></th>
+                                    <th><?= $this->Paginator->sort('CardName') ?></th>
+                                    <th><?= $this->Paginator->sort('color') ?></th>
+                                    <th><?= $this->Paginator->sort('cost') ?></th>
+                                    <th class="actions"><?= __('Actions') ?></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($cards as $card): ?>
+                                <tr>
+                                    <td><?= $this->Number->format($card->id) ?></td>
+                                    <td><?= h($card->rarity->rarity_name) ?></td>
+                                    <td><?= h($card->version->name) ?></td>
+                                    <td><?= h($card->version->short_name) ?></td>
+                                    <td><?= $this->Number->format($card->CardNumber) ?></td>
+                                    <td><?= h($card->CardName) ?></td>
+                                    <td><?= h($card->color) ?></td>
+                                    <td><?= h($card->cost) ?></td>
+                                    <td class="actions">
+                                        <?= $this->Html->link(__('View'), ['action' => 'view', $card->id]) ?>
+                                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $card->id]) ?>
+                                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $card->id], ['confirm' => __('Are you sure you want to delete # {0}?', $card->id)]) ?>
+                                    </td>
+                                </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </main>
-<!-- </div> -->
-<div class="cards index content">
-<?= $this->Html->link(__('New Card'), ['action' => 'add'], ['class' => 'button float-right']) ?>
-    <h3><?= __('カード') ?></h3>
-<div class="table-responsive">
-        <table>
-            <thead>
-                <tr>
-                    <th><?= $this->Paginator->sort('id') ?></th>
-                    <th><?= $this->Paginator->sort('rarity') ?></th>
-                    <th><?= $this->Paginator->sort('version_name') ?></th>
-                    <th><?= $this->Paginator->sort('short_name') ?></th>
-                    <th><?= $this->Paginator->sort('CardNumber') ?></th>
-                    <th><?= $this->Paginator->sort('CardName') ?></th>
-                    <th><?= $this->Paginator->sort('color') ?></th>
-                    <th><?= $this->Paginator->sort('cost') ?></th>
-                    <th class="actions"><?= __('Actions') ?></th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($cards as $card): ?>
-                <tr>
-                    <td><?= $this->Number->format($card->id) ?></td>
-                    <td><?= h($card->rarity->rarity_name) ?></td>
-                    <td><?= h($card->version->name) ?></td>
-                    <td><?= h($card->version->short_name) ?></td>
-                    <td><?= $this->Number->format($card->CardNumber) ?></td>
-                    <td><?= h($card->CardName) ?></td>
-                    <td><?= h($card->color) ?></td>
-                    <td><?= h($card->cost) ?></td>
-                    <td class="actions">
-                        <?= $this->Html->link(__('View'), ['action' => 'view', $card->id]) ?>
-                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $card->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $card->id], ['confirm' => __('Are you sure you want to delete # {0}?', $card->id)]) ?>
-                    </td>
-                </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    </div>
     </body>
-</div>
-</div>
