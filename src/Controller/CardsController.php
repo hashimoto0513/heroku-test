@@ -73,6 +73,13 @@ class CardsController extends AppController
                 }
         $num--;
 
+        $varsion_option = [
+            'NEW EVOLUTION' => 'NEW EVOLUTION'
+        ];
+
+        $rearty_option = [
+            'P-SEC' => 'P-SEC'
+        ];
 
         $options = [
             '赤' => '赤',
@@ -83,7 +90,7 @@ class CardsController extends AppController
         ];
 
         //上記で抽出した情報を$cardsという名称でセット
-        $this->set(compact('cards','array','num','versions','options','rarities'));
+        $this->set(compact('cards','array','num','versions','options','varsion_option','rearty_option','rarities'));
 
         if ($this->request->getData()) {
             $post_data = $this->request->getData();

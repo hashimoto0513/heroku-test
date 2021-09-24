@@ -33,59 +33,65 @@
                         <h3>カード検索</h3>
                     </div>
                 </div>
-                <div class="search-item">
-                    <div class="version-search">
-                        <p>収録弾</p>
-                        <div class="version-select"><?php
-                            echo $this->Form->select('versions');
-                        ?></div>
+                <div class="post"><?php echo $this->Form->create(null, ['type' => 'post'],); ?></div>
+                <div class="search-inner">
+                    <div class="search-item">
+                        <div class="version-search">
+                            <p>収録弾</p>
+                            <div class="version-select"><?php
+                                echo $this->Form->select('versions',$varsion_option,['default' => 'NEW EVOLUTION']);
+                            ?></div>
+                        </div>
+                    </div>
+                    <div class="search-item">
+                        <div class="rarity-search">
+                            <p>レアリティ</p>
+                            <div class="rarity-select"><?php
+                                echo $this->Form->select('rarities',$rearty_option,['default' => 'R']);
+                            ?>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- keyword情報を設定  -->
+                    <div class="search-item">
+                        <div class="cardname-search">
+                            <p>カードネーム</p>
+                            <?php
+                                echo $this->Form->text('keyword');
+                            ?>
+                        </div>
+                    </div>
+                    <!-- cost情報を設定 -->
+                    <div class="search-item">
+                        <div class="cost-search">
+                            <p>コスト</p>
+                            <?php
+                                echo $this->Form->select('cost',$array,['default' => '0']);
+                                echo "～";
+                                echo $this->Form->select('end_cost',$array,['default' => $num]);
+                            ?>
+                        </div>
                     </div>
                 </div>
-                <div class="search-item">
-                    <div class="rarity-search">
-                        <p>レアリティ</p>
-                        <div class="rarity-select"><?php
-                            echo $this->Form->select('rarities');
-                        ?>
+                <div class="search-outer">
+                        <!-- color情報を設定 -->
+                        <!-- color情報を設定(チェックボックス) -->
+                    <div class="search-item">
+                        <div class="color-search">
+                            <p>色</p>
+                            <?php
+                                echo $this->Form->select('color', $options, [
+                                    'multiple' => 'checkbox'
+                                ]);
+                            ?>
+                        </div>
                     </div>
+                    <!-- post情報送信ボタンの設置＆post情報用のform終了を宣言 -->
+                    <div class="btn"><?php
+                        echo $this->Form->submit('検索');
+                        echo $this->Form->end();
+                    ?></div>
                 </div>
-                <?php echo $this->Form->create(null, ['type' => 'post'],); ?>　<!-- keyword情報を設定 -->
-                <div class="search-item">
-                    <div class="cardname-search">
-                        <p>カードネーム</p>
-                        <?php
-                            echo $this->Form->text('keyword');
-                        ?>
-                    </div>
-                </div>
-                <!-- cost情報を設定 -->
-                <div class="search-item">
-                    <div class="cost-search">
-                        <p>コスト</p>
-                        <?php
-                            echo $this->Form->select('cost',$array,['default' => '0']);
-                            echo "～";
-                            echo $this->Form->select('end_cost',$array,['default' => $num]);
-                        ?>
-                    </div>
-                </div>
-                    <!-- color情報を設定 -->
-                    <!-- color情報を設定(チェックボックス) -->
-                <div class="search-item">
-                    <div class="color-search">
-                        <p>色</p>
-                        <?php
-                            echo $this->Form->select('color', $options, [
-                                'multiple' => 'checkbox'
-                            ]);
-                        ?>
-                    </div>
-                </div>
-                <!-- post情報送信ボタンの設置＆post情報用のform終了を宣言 -->
-                <?php
-                    echo $this->Form->submit('検索');
-                    echo $this->Form->end();
-                ?>
             </div>
 
 
