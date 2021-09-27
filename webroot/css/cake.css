@@ -27,7 +27,7 @@ a {
     left: 50%;
     box-sizing: border-box;
     border: black solid 0.1rem;
-    background-color:;
+    /* background-color: */
     margin: 0 auto;
 
 }
@@ -139,9 +139,6 @@ a {
     text-align: center;
     height: 70px;
     width: 100px;
-}
-.tavle-responsive th{
-    /* border: solid 0.1rem black; */
 }
 .table-responsive td{
     border: solid 0.1rem black;
