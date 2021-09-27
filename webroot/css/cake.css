@@ -122,11 +122,6 @@ a {
 .button:hover {
     box-shadow: none;
 }
-.table-responsive th{
-}
-.thead{
-    /* padding: 10px 0; */
-}
 .table-responsive{
     padding: 10px 20px;
 }
