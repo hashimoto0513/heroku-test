@@ -87,6 +87,8 @@ class CardsController extends AppController
             '黄' => '黄',
             '緑' => '緑',
             '白' => '白',
+            '黒' => '黒',
+            '紫' => '紫'
         ];
 
         //上記で抽出した情報を$cardsという名称でセット

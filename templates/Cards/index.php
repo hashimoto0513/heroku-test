@@ -87,9 +87,10 @@
                         </div>
                     </div>
                     <!-- post情報送信ボタンの設置＆post情報用のform終了を宣言 -->
-                    <div class="btn"><?php
-                        echo $this->Form->submit('検索');
-                        echo $this->Form->end();
+                    <?php
+                        echo $this->Form->submit('検索する',['type' => 'submit','class' => ['class' => 'search-button']]);?>
+                        <!-- echo $this->Form->submit(?> -->
+                        <?php echo $this->Form->end();
                     ?></div>
                 </div>
             </div>
@@ -99,20 +100,20 @@
             <div class="results">
                 <div class="cards index content">
                 <?= $this->Html->link(__('New Card'), ['action' => 'add'], ['class' => 'button float-right']) ?>
-                    <h3><?= __('カード') ?></h3>
+                    <!-- <h3><?= __('カード') ?></h3> -->
                     <div class="table-responsive">
                         <table>
                             <thead>
                                 <tr>
-                                    <th><?= $this->Paginator->sort('id') ?></th>
-                                    <th><?= $this->Paginator->sort('rarity') ?></th>
-                                    <th><?= $this->Paginator->sort('version_name') ?></th>
-                                    <th><?= $this->Paginator->sort('short_name') ?></th>
-                                    <th><?= $this->Paginator->sort('CardNumber') ?></th>
-                                    <th><?= $this->Paginator->sort('CardName') ?></th>
-                                    <th><?= $this->Paginator->sort('color') ?></th>
-                                    <th><?= $this->Paginator->sort('cost') ?></th>
-                                    <th class="actions"><?= __('Actions') ?></th>
+                                    <th><?= $this->Paginator->sort('ID') ?></th>
+                                    <th><?= $this->Paginator->sort('レアリティ') ?></th>
+                                    <th><?= $this->Paginator->sort('収録弾') ?></th>
+                                    <th><?= $this->Paginator->sort('弾数') ?></th>
+                                    <th><?= $this->Paginator->sort('カードNo.') ?></th>
+                                    <th><?= $this->Paginator->sort('カード名') ?></th>
+                                    <th><?= $this->Paginator->sort('色') ?></th>
+                                    <th><?= $this->Paginator->sort('コスト') ?></th>
+                                    <th><?= __('Actions') ?></th>
                                 </tr>
                             </thead>
                             <tbody>
