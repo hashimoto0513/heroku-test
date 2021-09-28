@@ -12,7 +12,7 @@
     <body>
         <!-- header -->
         <div class="header">
-            <div class="header-inner">
+            <!-- <div class="header-inner"> -->
                 <h1 class="site-title"><a href="">デジモンカード検索</a></h1>
                 <nav class="header-nav">
                     <ul class="nav-list">
@@ -21,7 +21,7 @@
                         <li class="nav-item"><a href="">Rarty</a></li>
                     </ul>
                 </nav>
-            </div>
+            <!-- </div> -->
         </div>
         <!-- //header -->
 
@@ -102,21 +102,23 @@
                 <?= $this->Html->link(__('New Card'), ['action' => 'add'], ['class' => 'button float-right']) ?>
                     <!-- <h3><?= __('カード') ?></h3> -->
                     <div class="table-responsive">
-                        <table>
-                            <thead>
+                        <table class="table_cardlist">
+                            <thead class="thead_cardlist">
                                 <tr>
-                                    <th><?= $this->Paginator->sort('ID') ?></th>
-                                    <th><?= $this->Paginator->sort('レアリティ') ?></th>
-                                    <th><?= $this->Paginator->sort('収録弾') ?></th>
-                                    <th><?= $this->Paginator->sort('弾数') ?></th>
-                                    <th><?= $this->Paginator->sort('カードNo.') ?></th>
-                                    <th><?= $this->Paginator->sort('カード名') ?></th>
+                                    <th class="tit_id"><?= $this->Paginator->sort('ID') ?></th>
+                                    <th class="tit_rea"><?= $this->Paginator->sort('レアリティ') ?></th>
+                                    <th class="tit_var"><?= $this->Paginator->sort('収録弾') ?></th>
+                                    <th class="tit_shortvar"><?= $this->Paginator->sort('弾数') ?></th>
+                                    <th class="tit_no"><?= $this->Paginator->sort('カードNo.') ?></th>
+                                    <th class="tit_name"><?= $this->Paginator->sort('カード名') ?></th>
                                     <th><?= $this->Paginator->sort('色') ?></th>
                                     <th><?= $this->Paginator->sort('コスト') ?></th>
                                     <th><?= __('Actions') ?></th>
                                 </tr>
                             </thead>
                             <tbody>
+                        <!-- </table> -->
+                        <!-- <div class="search_results"> -->
                                 <?php foreach ($cards as $card): ?>
                                 <tr>
                                     <td><?= $this->Number->format($card->id) ?></td>

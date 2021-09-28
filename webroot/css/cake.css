@@ -16,49 +16,46 @@ img{
 
 a {
     color: black;
+    text-decoration: none;
 }
 
 /* header */
 .header{
-    padding: 0px 30px;
+    display:flex;
+    margin: 0 auto;
     height: 90px;
     width: 960px;
-    top: 0;
-    left: 50%;
-    box-sizing: border-box;
-    border: black solid 0.1rem;
-    /* background-color: */
-    margin: 0 auto;
-
-}
-.header-inner{
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    max-width: border-box;
-    height: 80px;
 }
 .site-title{
     font-size: 3.6rem;
+    text-align: center;
+    display: inline-block;
 }
-.nav-list{
+.header-nav{
+    margin-left:auto;
+    padding: 0;
     display: flex;
-    margin-right: 30px;
+}
+.header-nav a{
+    width: 100px;
+    text-align: center;
+    line-height: 64px;
+    display: block;
 }
 .nav-item{
-    margin-right: 30px;
+    margin: 0;
+    padding: 0;
+    float: right;
 }
 .search {
-    /* background-color: brown; */
     width: 960px;
     margin: 0 auto;
-    /* display: flex; */
-    /* display: flex; */
-    /* display: inline-flex; */
 }
 .search-container h3{
     font-size: 30px;
     border: solid black 0.1rem;
+    border-bottom: none;
     width: 200px;
     margin-top: 20px;
     text-align: center;
@@ -74,23 +71,25 @@ a {
     flex-wrap: wrap;
     justify-content: space-between;
     padding-left: 20px;
-    padding-top: 10px;
     padding-right: 20px;
     height: 100px;
-    border-top: solid #ddd 1px;
+    border: solid black 0.1rem;
+    border-bottom: none;
+    align-items: center;
 }
 
 .results{
     width: 960px;
     margin: 0 auto;
     background-color: #ddd;
-    overflow: scroll;
-    /* display: flex; */
 }
 .search-outer{
     background-color: #ddd;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    border-left: solid black 0.1rem;
+    border-right: solid black 0.1rem;
 }
 .color-search p{
     font-size: 20px;
@@ -122,21 +121,42 @@ a {
 .button:hover {
     box-shadow: none;
 }
+
+/* results */
 .table-responsive{
+    width: 900px;
+    border: solid #333 1px;
     padding: 10px 20px;
+    margin: 0 auto;
+}
+.thead_cardlist{
+    width: 900px;
+    border: solid #333 1px;
+    margin: 0 auto;
+}
+.thead {
+    font-size: inherit;
+    font: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 .table-responsive thead a{
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border: solid 0.1rem black;
+    padding-top: 10px;
+    /* padding-bottom: 20px; */
+    /* border: solid 0.1rem black; */
     box-sizing: border-box;
-    display: flex;
+    display: inline-block;
     text-align: center;
-    height: 70px;
+    height: 40px;
     width: 100px;
 }
-.table-responsive td{
-    border: solid 0.1rem black;
+.search_results{
+    width: 800px;
+    border: solid #333 1px;
+    margin: 0 auto;
+}
+.tit_id {
+    padding: 10px;
 }
     /* .btn{
     width: 100px;
