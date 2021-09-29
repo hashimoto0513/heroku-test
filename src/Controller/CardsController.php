@@ -74,10 +74,12 @@ class CardsController extends AppController
         $num--;
 
         $varsion_option = [
-            'NEW EVOLUTION' => 'NEW EVOLUTION'
-        ];
+            '選択' => '選択',
+            'NEW EVOLUTION' => 'NEW EVOLUTION',
+         ];
 
         $rearty_option = [
+            '選択' => '選択',
             'P-SEC' => 'P-SEC'
         ];
 

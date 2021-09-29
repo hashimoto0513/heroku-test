@@ -48,20 +48,31 @@ a {
     padding: 0;
     float: right;
 }
-.search {
+.wrapper-outer{
     width: 960px;
     margin: 0 auto;
+
+}
+.wrapper_inner {
+    width: 960px;
+    margin: 0 auto;
+    background-color: #ddd;
+    padding: 30px 0;
 }
 .search-container h3{
     font-size: 30px;
     border: solid black 0.1rem;
-    border-bottom: none;
     width: 200px;
     margin-top: 20px;
     text-align: center;
 }
 .post{
     padding: 0;
+}
+.card_search{
+    width: 900px;
+    margin: 0 auto;
+    border: solid black 0.1rem;
 }
 .search-inner{
     font-size: 20px;
@@ -70,10 +81,10 @@ a {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
     height: 100px;
-    border: solid black 0.1rem;
+    border: solid #ddd 0.1rem;
     border-bottom: none;
     align-items: center;
 }
@@ -88,8 +99,39 @@ a {
     display: flex;
     flex-direction: row;
     align-items: center;
-    border-left: solid black 0.1rem;
-    border-right: solid black 0.1rem;
+    border-left: solid #ddd 0.1rem;
+    border-right: solid #ddd 0.1rem;
+    padding-bottom: 30px;
+    padding-left: 30px;
+}
+.ver-select{
+    font-size: 13px;
+    width: 150px;
+    height: 28px;
+    line-height: 22px;
+    white-space: nowrap;
+}
+.rea-select{
+    font-size: 13px;
+    width: 100px;
+    height: 28px;
+    line-height: 22px;
+    white-space: nowrap;
+}
+.cardname-text{
+    font-size: 13px;
+    width: 250px;
+    height: 28px;
+}
+.cost-select{
+    font-size: 13px;
+    width: 40px;
+    height: 28px;
+}
+.end_cost-select{
+    font-size: 13px;
+    width: 40px;
+    height: 28px;
 }
 .color-search p{
     font-size: 20px;
