@@ -163,7 +163,28 @@ a {
 .button:hover {
     box-shadow: none;
 }
-
+/* /////////// */
+/* pagination  */
+/* /////////// */
+.pagination{
+    font-size: 80%;
+    margin-bottom: 10px;
+    width: 960px;
+    background-color: #ffff4d;
+    margin:0 auto;
+    justify-content: start;
+}
+.pagination-wrapper{
+    display: flex;
+    padding: 0 10px;
+    width: 600px;
+    margin-bottom: 10px;
+}
+.prev{
+    background-color: #fff;
+    color: #999;
+    border-color: #999;
+}
 /* results */
 .table-responsive{
     width: 900px;
@@ -199,6 +220,9 @@ a {
 }
 .tit_id {
     padding: 10px;
+}
+.float-right{
+    float: right;
 }
     /* .btn{
     width: 100px;

@@ -96,12 +96,19 @@
                         </div>
                     </div>
                 </div>
+                <div class="pagination">
+                    <ul class="pagination-wrapper">
+                        <?= $this->Paginator->prev('<<') ?>
+                        <?= $this->Paginator->numbers() ?>
+                        <?= $this->Paginator->next('>>') ?>
+                    </ul>
+                </div>
 
                 <!-- </div> -->
                 <div class="results">
-                    <div class="cards index content">
+                    <div class="cards-index-content">
                     <?= $this->Html->link(__('New Card'), ['action' => 'add'], ['class' => 'button float-right']) ?>
-                        <!-- <h3><?= __('カード') ?></h3> -->
+                        <!-- <?= __('カード') ?> -->
                         <div class="table-responsive">
                             <table class="table_cardlist">
                                 <thead class="thead_cardlist">

@@ -11,11 +11,21 @@ namespace App\Controller;
  */
 class CardsController extends AppController
 {
-    /**
+    public function initialize(): void
+    {
+        parent::initialize();
+        $this->loadComponent('Paginator');
+    }/**
      * Index method
      *
      * @return \Cake\Http\Response|null|void Renders view
      */
+    public $paginate = [
+		'limit' => 10, // 1ページに表示するデータ件数
+        'order' => [
+            'cards.CardNumber' => 'asc'
+        ]
+	];
     public function index(){
         $this->loadModel('Versions');
 
@@ -62,6 +72,7 @@ class CardsController extends AppController
             }
         }
 
+        $cards =$this->paginate($cards);
         //項目数が増えた場合にページ分割するようにpaginate処理
         //$cards = $this->paginate($cards);
 
@@ -94,7 +105,7 @@ class CardsController extends AppController
         ];
 
         //上記で抽出した情報を$cardsという名称でセット
-        $this->set(compact('cards','array','num','versions','options','varsion_option','rearty_option','rarities'));
+        $this->set(compact('cards','array','num','versions','options','varsion_option','rearty_option','rarities',$this->paginate()));
 
         if ($this->request->getData()) {
             $post_data = $this->request->getData();
