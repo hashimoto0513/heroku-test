@@ -93,6 +93,7 @@
                                     <?php echo $this->Form->end();
                                 ?></div>
                             </div>
+                            <?= $this->Html->link(__('New Card'), ['action' => 'add'], ['class' => 'button float-right']) ?>
                         </div>
                     </div>
                 </div>
@@ -107,7 +108,6 @@
                 <!-- </div> -->
                 <div class="results">
                     <div class="cards-index-content">
-                    <?= $this->Html->link(__('New Card'), ['action' => 'add'], ['class' => 'button float-right']) ?>
                         <!-- <?= __('カード') ?> -->
                         <div class="table-responsive">
                             <table class="table_cardlist">
