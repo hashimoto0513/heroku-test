@@ -204,35 +204,163 @@ a {
     padding: 10px 20px;
     margin: 0 auto;
 }
-.thead_cardlist{
-    width: 900px;
-    border: solid #333 1px;
-    margin: 0 auto;
-}
-.thead {
+table {
     font-size: inherit;
     font: 100%;
     border-collapse: collapse;
     border-spacing: 0;
 }
-.table-responsive thead a{
+.table_cardlist{
+    width: 900px;
+    border: solid #333 1px;
+    margin: 0 auto;
+}
+.thead {
+    border-color: black;
+    display: table-row-group;
+    vertical-align: middle;
+    font-size: inherit;
+}
+tr{
+    display: table-row;
+    vertical-align: inherit;
+    border-color: black;
+}
+.table_cardlist tr th{
+    font-size: 90%;
+    font-weight: bold;
+    border-bottom: solid #333 1px;
+    border-right: solid #333 1px;
+    background-color: #ccc;
+    padding: 3px 0;
+}
+.table_cardlist tr .tit_id{
+    width: 5%;
+    text-align: center;
+    vertical-align: middle;
+}
+.table_cardlist tr .tit_rea{
+    width: 7%;
+    padding-left: 5px;
+    vertical-align: middle;
+}
+.table_cardlist tr .tit_var{
+    width: 20%;
+    padding-left: 5px;
+    vertical-align: middle;
+}
+.table_cardlist tr .tit_short_ver{
+    width: 6.5%;
+    padding-left: 5px;
+    vertical-align: middle;
+}
+.table_cardlist tr .tit_no{
+    padding-left: 5px;
+    width: 10%;
+    vertical-align: middle;
+}
+.table_cardlist tr .tit_name{
+    width: 22%;
+    padding-left: 5px;
+    vertical-align: middle;
+}
+.table_cardlist tr .tit_color{
+    width: 5%;
+    padding-left: 5px;
+    vertical-align: middle;
+}
+.table_cardlist tr .tit_cost{
+    width: 8%;
+    padding-left: 5px;
+    vertical-align: middle;
+}
+.table_cardlist tr .actions{
+    width: 15%;
+    padding-left: 5px;
+    vertical-align: middle;
+}
+
+
+
+#search_results{
+    width: 900px;
+    margin: 0 auto;
+    border: 0;
+    background-color: #eeeeee;
+    /* display: flex; */
+    border-bottom: solid #333 1px;
+    border-right: solid #333 1px;
+}
+#search_results .cardlist_id{
+    width: 5%;
+    text-align: center;
+    vertical-align: middle;
+    border: solid #333 1px;
+    border-top: none;
+}
+#search_results .cardlist_rea{
+    width: 7%;
+    padding-left: 5px;
+    border: solid #333 1px;
+    border-top: none;
+}
+#search_results .cardlist_ver{
+    width: 20%;
+    padding-left: 5px;
+    border: solid #333 1px;
+    border-top: none;
+}
+#search_results .cardlist_short_ver{
+    width: 6.5%;
+    padding-left: 5px;
+    border: solid #333 1px;
+    border-top: none;
+}
+#search_results .cardlist_no{
+    width: 10%;
+    padding-left: 5px;
+    border: solid #333 1px;
+    border-top: none;
+}
+#search_results .cardlist_name{
+    width: 22%;
+    padding-left: 5px;
+    border: solid #333 1px;
+    border-top: none;
+}
+#search_results .cardlist_color{
+    width: 5%;
+    padding-left: 5px;
+    border: solid #333 1px;
+    border-top: none;
+}
+#search_results .cardlist_cost{
+    width: 8%;
+    padding-left: 5px;
+    border: solid #333 1px;
+    border-top: none;
+}
+#search_results .actions{
+    width: 15%;
+    padding-left: 5px;
+    border: solid #333 1px;
+    border-top: none;
+}
+/* .table-responsive thead a{
     padding-top: 10px;
-    /* padding-bottom: 20px; */
-    /* border: solid 0.1rem black; */
     box-sizing: border-box;
+    padding-right: 50px;
+    background-color: #CCC;
     display: inline-block;
     text-align: center;
     height: 40px;
     width: 100px;
-}
-.search_results{
+} */
+/* .search_results{
     width: 800px;
     border: solid #333 1px;
     margin: 0 auto;
-}
-.tit_id {
-    padding: 10px;
-}
+} */
     /* .btn{
     width: 100px;
     height: 50px;

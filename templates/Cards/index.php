@@ -111,32 +111,32 @@
                         <!-- <?= __('カード') ?> -->
                         <div class="table-responsive">
                             <table class="table_cardlist">
-                                <thead class="thead_cardlist">
+                                <thead>
                                     <tr>
-                                        <th class="tit_id"><?= $this->Paginator->sort('ID') ?></th>
-                                        <th class="tit_rea"><?= $this->Paginator->sort('レアリティ') ?></th>
+                                        <th class="tit_id"><?= $this->Paginator->sort('ID'); ?></th>
+                                        <th class="tit_rea"><?= $this->Paginator->sort('レア') ?></th>
                                         <th class="tit_var"><?= $this->Paginator->sort('収録弾') ?></th>
-                                        <th class="tit_shortvar"><?= $this->Paginator->sort('弾数') ?></th>
+                                        <th class="tit_short_ver"><?= $this->Paginator->sort('弾数') ?></th>
                                         <th class="tit_no"><?= $this->Paginator->sort('カードNo.') ?></th>
                                         <th class="tit_name"><?= $this->Paginator->sort('カード名') ?></th>
-                                        <th><?= $this->Paginator->sort('色') ?></th>
-                                        <th><?= $this->Paginator->sort('コスト') ?></th>
-                                        <th><?= __('Actions') ?></th>
+                                        <th class="tit_color"><?= $this->Paginator->sort('色') ?></th>
+                                        <th class="tit_cost"><?= $this->Paginator->sort('コスト') ?></th>
+                                        <th class="actions"><?= __('Actions') ?></th>
                                     </tr>
                                 </thead>
+                            </table>
+                            <table id="search_results">
                                 <tbody>
-                                <!-- </table> -->
-                                <!-- <div class="search_results"> -->
                                     <?php foreach ($cards as $card): ?>
                                     <tr>
-                                        <td><?= $this->Number->format($card->id) ?></td>
-                                        <td><?= h($card->rarity->rarity_name) ?></td>
-                                        <td><?= h($card->version->name) ?></td>
-                                        <td><?= h($card->version->short_name) ?></td>
-                                        <td><?= $this->Number->format($card->CardNumber) ?></td>
-                                        <td><?= h($card->CardName) ?></td>
-                                        <td><?= h($card->color) ?></td>
-                                        <td><?= h($card->cost) ?></td>
+                                        <td class="cardlist_id"><?= $this->Number->format($card->id) ?></td>
+                                        <td class="cardlist_rea"><?= h($card->rarity->rarity_name) ?></td>
+                                        <td class="cardlist_ver"><?= h($card->version->name) ?></td>
+                                        <td class="cardlist_short_ver"><?= h($card->version->short_name) ?></td>
+                                        <td class="cardlist_no"><?= $this->Number->format($card->CardNumber) ?></td>
+                                        <td class="cardlist_name"><?= h($card->CardName) ?></td>
+                                        <td class="cardlist_color"><?= h($card->color) ?></td>
+                                        <td class="cardlist_cost"><?= h($card->cost) ?></td>
                                         <td class="actions">
                                             <?= $this->Html->link(__('View'), ['action' => 'view', $card->id]) ?>
                                             <?= $this->Html->link(__('Edit'), ['action' => 'edit', $card->id]) ?>
@@ -145,7 +145,7 @@
                                     </tr>
                                     <?php endforeach; ?>
                                 </tbody>
-                            </table>
+                            </div>
                         </div>
                     </div>
                 </div>
