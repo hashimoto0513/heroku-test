@@ -12,14 +12,23 @@
     <body>
      <!-- header   -->
         <div class="header">
-                <h1 class="site-title"><a href="">デジモンカード検索</a></h1>
-                <nav class="header-nav">
-                    <ul class="nav-list">
-                        <li class="nav-item"><a href="">Edit</a></li>
-                        <li class="nav-item"><a href="">Version</a></li>
-                        <li class="nav-item"><a href="">Rarty</a></li>
-                    </ul>
-                </nav>
+            <h1 class="site-title"><a href="">デジモンカード検索</a></h1>
+            <nav class="header-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="">Edit</a></li>
+                    <li class="nav-item"><a href="">Version</a></li>
+                    <li class="nav-item"><a href="">Rarty</a></li>
+                </ul>
+            </nav>
+            <button class="burger-btn">
+                <span class="bars">
+                    <span class="bar bar_top"></span>
+                    <span class="bar bar_mid"></span>
+                    <span class="bar bar_bottom"></span>
+                </span>
+                <span class="menu">MENU</span>
+            </button>
+            <span class="burger-musk"></span>
         </div>
         <!-- //header -->
 
@@ -151,4 +160,11 @@
                 </div>
             </div>
         </main>
+        <!-- main -->
+
+        <!-- footer -->
+        <footer>
+
+        </footer>
+        <!-- footer -->
     </body>
