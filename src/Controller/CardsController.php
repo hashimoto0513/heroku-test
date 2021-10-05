@@ -21,7 +21,7 @@ class CardsController extends AppController
      * @return \Cake\Http\Response|null|void Renders view
      */
     public $paginate = [
-		'limit' => 10, // 1ページに表示するデータ件数
+		'limit' => 20, // 1ページに表示するデータ件数
         'order' => [
             'cards.CardNumber' => 'asc'
         ]

@@ -154,17 +154,24 @@
                                     </tr>
                                     <?php endforeach; ?>
                                 </tbody>
-                            </div>
+                            </table>
                         </div>
                     </div>
+                </div>
+                <div class="pagination2">
+                    <ul class="pagination2-wrapper">
+                        <?= $this->Paginator->prev('<<') ?>
+                        <?= $this->Paginator->numbers() ?>
+                        <?= $this->Paginator->next('>>') ?>
+                    </ul>
                 </div>
             </div>
         </main>
         <!-- main -->
 
         <!-- footer -->
-        <footer>
-
+        <footer class="footer">
+            <small>&copy; デジモンカード検索</small>
         </footer>
         <!-- footer -->
     </body>
