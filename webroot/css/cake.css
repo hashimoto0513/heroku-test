@@ -94,11 +94,11 @@ a {
 }
 .bar_top{
     transform: translateY(-4px);
-    transition: transform .3s;
+    transition: transform .4s;
 }
 .bar_bottom{
     transform: translateY(4px);
-    transition: transform .3s;
+    transition: transform .4s;
 }
 .menu{
     display: block;
@@ -129,7 +129,7 @@ body.noscroll{
 .header-nav.open{
     transform: translateX(0);
     opacity: 1;
-    transition: transform .3s,opacity .3s;
+    transition: transform .4s,opacity .4s;
 }
 .burger-musk{
     display: none;
@@ -144,11 +144,11 @@ body.noscroll{
 
 .burger-btn.black .bar{
     background-color: #333;
-    transition: background-color .3s;
+    transition: background-color .4s;
 }
 .burger-btn.black .menu{
     color: #333;
-    transition: color .3s;
+    transition: color .4s;
 }
 /* main */
 .wrapper-outer{

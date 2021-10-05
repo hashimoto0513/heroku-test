@@ -16,8 +16,8 @@
             <nav class="header-nav">
                 <ul class="nav-list">
                     <li class="nav-item"><a href="">Edit</a></li>
-                    <li class="nav-item"><a href="">Version</a></li>
-                    <li class="nav-item"><a href="">Rarty</a></li>
+                    <li class="nav-item"><a href="/versions/index">Version</a></li>
+                    <li class="nav-item"><a href="/Rarities/index">Rarty</a></li>
                 </ul>
             </nav>
             <button class="burger-btn">
