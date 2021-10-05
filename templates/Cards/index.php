@@ -11,7 +11,7 @@
 <!-- post情報として送るFormを生成 -->
     <body>
      <!-- header   -->
-     <div class="header">
+        <div class="header">
             <h1 class="site-title"><a href="">デジモンカード検索</a></h1>
             <nav class="header-nav">
                 <ul class="nav-list">

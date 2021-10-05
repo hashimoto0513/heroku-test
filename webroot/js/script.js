@@ -1,17 +1,19 @@
 // ハンバーガーメニュー
 
 $(function(){
-    var imgHeight =$('.kv-wrapper').outerHeight();
-    var bgHeight =$('.fv').outerHeight();
+    var imgHeight =$('.wrapper-outer').outerHeight();
+    var bgHeight =$('.primary-container').outerHeight();
 
     $(".burger-btn").on('click',function(){
         if( $(window).scrollTop() < imgHeight -50){
-            $('.bar').toggleClass('cross');
-            $('.header-nav').toggleClass('open');
-            $('.burger-musk').fadeToggle(300);
-            $('body').toggleClass('noscroll');
+            //ハンバーガーボタンがprimary-containerより上にあるとき
+            $('.bar').toggleClass('cross'); //ハンバーガーボタンのラインをクロスさせるCSSを当てたり外したりする
+            $('.header-nav').toggleClass('open'); //ナビゲーションが開くCSSを当てたり外したりする
+            $('.burger-musk').fadeToggle(300); //背景を暗くするマスクをフェードイン・フェードアウトさせる
+            $('body').toggleClass('noscroll'); //ハンバーガーメニューを開いたときにスクロールしないようにする
         }else{
-            $(this).toggleClass('black');
+            //ハンバーガーボタンがprimary-containerより下にあるとき
+            $(this).toggleClass('white'); //ハンバーガーボタンを黒くしたり白くしたりする
             $('.bar').toggleClass('cross');
             $('.header-nav').toggleClass('open');
             $('.burger-musk').fadeToggle(300);
