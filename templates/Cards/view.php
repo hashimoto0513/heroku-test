@@ -16,44 +16,42 @@
     </aside>
     <div class="column-responsive column-80">
         <div class="cards view content">
-            <h3><?= h($card->CardName) ?></h3>
-            <table>
-                <tr>
-                    <th><?= __('rarty') ?></th>
-                    <td><?= h($card->rarity->rarity_name) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('versions') ?></th>
-                    <td><?= h($card->version->name) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('CardName') ?></th>
-                    <td><?= h($card->CardName) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Color') ?></th>
-                    <td><?= h($card->color) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Cost') ?></th>
-                    <td><?= h($card->cost) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Id') ?></th>
-                    <td><?= $this->Number->format($card->id) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('CardNumber') ?></th>
-                    <td><?= $this->Number->format($card->CardNumber) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Created') ?></th>
-                    <td><?= h($card->created) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Modified') ?></th>
-                    <td><?= h($card->modified) ?></td>
-                </tr>
+            <!-- <h3><?= h($card->CardName) ?></h3> -->
+            <table class="view_table" cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td class="card_detail" colspan="6">カード詳細</td>
+                    </tr>
+                    <tr class="view_image" colspan="8">
+
+                    </tr>
+                    <tr>
+                        <th class="view_th_id"><?= __('Id') ?></th>
+                        <td class="view_td_id"><?= $this->Number->format($card->id) ?></td>
+                        <th class="view_th_rea"><?= __('レアリティ') ?></th>
+                        <td><?= h($card->rarity->rarity_name) ?></td>
+                        <th class="view_color"><?= __('色') ?></th>
+                        <td><?= h($card->color) ?></td>
+                    </tr>
+                    <tr>
+                        <th class="view_ver"><?= __('収録弾') ?></th>
+                        <td><?= h($card->version->name) ?></td>
+                        <th class="view_cardname"><?= __('カード名') ?></th>
+                        <td><?= h($card->CardName) ?></td>
+                    </tr>
+                    <tr>
+                        <th class="view_cost"><?= __('コスト') ?></th>
+                        <td><?= h($card->cost) ?></td>
+                        <th class="view_no"><?= __('カードナンバー') ?></th>
+                        <td><?= $this->Number->format($card->CardNumber) ?></td>
+                    </tr>
+                    <tr>
+                        <th class="view_created"><?= __('Created') ?></th>
+                        <td><?= h($card->created) ?></td>
+                        <th class="view_modified"><?= __('Modified') ?></th>
+                        <td><?= h($card->modified) ?></td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     </div>

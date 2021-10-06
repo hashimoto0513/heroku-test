@@ -7,7 +7,7 @@
 <div class="row">
     <aside class="column">
         <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
+            <h4 class="heading"><? __('Actions') ?></h4>
             <?= $this->Form->postLink(
                 __('Delete'),
                 ['action' => 'delete', $card->id],
@@ -38,3 +38,4 @@
         </div>
     </div>
 </div>
+<!-- __('Actions') -->

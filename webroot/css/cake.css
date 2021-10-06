@@ -35,14 +35,11 @@ a {
 
 }
 .header-nav{
-    /* margin-left:auto; */
-    /* padding: 0; */
-    /* display: flex; */
     font-weight: bold;
     font-size: 2rem;
     position: fixed;
     top: 0;
-    right: 0;
+    right: 0; /*右上に固定*/
     height: 100vh;
     width: 20.1vw;
     text-align: center;
@@ -65,17 +62,6 @@ a {
 .nav-item a{
     color: #fff;
 }
-/* .header-nav a{
-    width: 100px;
-    text-align: center;
-    line-height: 64px;
-    display: block;
-} */
-/* .nav-item{
-    margin: 0;
-    padding: 0;
-    float: right;
-} */
 /* ハンバーガーボタン（メニューが開いていないとき） */
 .burger-btn{
     display: flex;
@@ -489,6 +475,67 @@ tr{
     width: 960px;
 
 }
+/* edit */
+.row{
+    width: 720px;
+    font-size: 13px;
+    /* border: solid #333 1px; */
+    padding: 10px 20px;
+    margin: 0 auto;
+}
+/* view */
+.view_table{
+    border-collapse: collapse;
+}
+.side-nav{
+    background-color: aqua;
+}
+.side-nav-item{
+    border: solid 0.1rem black;
+    border-bottom: none;
+}
+.column-responsive{
+    border: solid 0.1rem black;
+}
+.column-responsive .view{
+    background-color: bisque;
+}
+.view{
+    background-color: bisque;
+}
+.view table{
+    border-collapse: collapse;
+}
+.view table th{
+    background-color: #d0ebfd;
+    color: #0d90f3;
+}
+.card_detail{
+    background-color:#666;
+    color: #fff;
+    padding: 5px;
+    font-weight: bold;
+    border-collapse: collapse;
+    width: 720px;
+}
+/* .view table td{
+    padding-left: 5px;
+}
+.view table tr{
+    border-bottom: solid 0.1rem black;
+}
+.view_th_id{
+    border-bottom: solid 0.1rem black;
+    width: 10%;
+}
+.view_td_id{
+    border-bottom: solid 0.1rem black;
+    width: 10%;
+}
+.view_th_rea{
+    border-bottom: solid 0.1rem black;
+    width: 20%;
+} */
 /* .table-responsive thead a{
     padding-top: 10px;
     box-sizing: border-box;
