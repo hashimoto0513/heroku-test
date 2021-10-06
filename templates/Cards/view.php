@@ -22,30 +22,25 @@
                     <tr>
                         <td class="card_detail" colspan="6">カード詳細</td>
                     </tr>
-                    <tr class="view_image" colspan="8">
-
+                    <tr>
+                        <th class="view_no"><?= __('カードナンバー') ?></th>
+                        <td><?= $this->Number->format($card->CardNumber) ?></td>
+                        <th class="view_th_rea"><?= __('レアリティ') ?></th>
+                        <td class="view_td_id"><?= h($card->rarity->rarity_name) ?></td>
+                        <th class="view_th_color"><?= __('色') ?></th>
+                        <td class="view_td_color"><?= h($card->color) ?></td>
+                    </tr>
+                    <tr>
+                        <th class="view_ver" ><?= __('収録弾') ?></th>
+                        <td><?= h($card->version->name) ?></td>
+                        <th class="view_cardname"><?= __('カード名') ?></th>
+                        <td><?= h($card->CardName) ?></td>
+                        <th class="view_cost"><?= __('コスト') ?></th>
+                        <td><?= h($card->cost) ?></td>
                     </tr>
                     <tr>
                         <th class="view_th_id"><?= __('Id') ?></th>
                         <td class="view_td_id"><?= $this->Number->format($card->id) ?></td>
-                        <th class="view_th_rea"><?= __('レアリティ') ?></th>
-                        <td><?= h($card->rarity->rarity_name) ?></td>
-                        <th class="view_color"><?= __('色') ?></th>
-                        <td><?= h($card->color) ?></td>
-                    </tr>
-                    <tr>
-                        <th class="view_ver"><?= __('収録弾') ?></th>
-                        <td><?= h($card->version->name) ?></td>
-                        <th class="view_cardname"><?= __('カード名') ?></th>
-                        <td><?= h($card->CardName) ?></td>
-                    </tr>
-                    <tr>
-                        <th class="view_cost"><?= __('コスト') ?></th>
-                        <td><?= h($card->cost) ?></td>
-                        <th class="view_no"><?= __('カードナンバー') ?></th>
-                        <td><?= $this->Number->format($card->CardNumber) ?></td>
-                    </tr>
-                    <tr>
                         <th class="view_created"><?= __('Created') ?></th>
                         <td><?= h($card->created) ?></td>
                         <th class="view_modified"><?= __('Modified') ?></th>
