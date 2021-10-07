@@ -496,6 +496,7 @@ tr{
     border: solid 0.1rem black;
     border-radius: 10px;
     padding: 5px;
+    margin-right: 5px;
 }
 .column-responsive{
     border: solid 0.1rem black;
@@ -528,6 +529,70 @@ tr{
     border-collapse: collapse;
     width: 720px;
 }
+/* /////*/
+/* edit */
+/* //// */
+
+.edit-wrapper label{
+    display:block;
+    /* background-color: #AAE; */
+    font-size: 16px;
+    margin-right: 5px;
+    margin-top: 5px;
+    /* margin-left: 5px; */
+    width: 100px;
+    padding-left: 2px;
+    font-weight: bold;
+}
+.edit-column-responsive {
+    width: 720px;
+}
+.eidt_short_ver{
+    margin-top: 10px;
+    border-radius: 5px;
+}
+.edit-wrapper select{
+    border-radius: 5px;
+    width: 700px;
+    height: 30px;
+    font-weight: bold;
+}
+.edit-wrapper input{
+    width: 690px;
+    height: 20px;
+    font-weight: bold;
+}
+#cardname{
+    width: 690px;
+    height: 25px;
+    /* padding-left: 10px; */
+}
+.edit_cost{
+    margin-bottom: 15px;
+}
+.btn-wrapper{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    width: 720px;
+}
+.edit_button{
+    background-color: #fff;
+    border: solid 0.1rem black;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+}
+.delete-btn{
+    padding: 1px 6px ;
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    border: solid 0.1rem black;
+    border-radius: 5px;
+}
+
 /* .view table td{
     padding-left: 5px;
 }
