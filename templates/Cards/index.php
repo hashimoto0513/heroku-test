@@ -6,7 +6,7 @@
 ?>
 
 <?php  $this->Html->css('reset', ['block' => true]); ?>
-<?php  $this->Html->css('my', ['block' => true]); ?>
+<?php  $this->Html->css('cake', ['block' => true]); ?>
 <!-- <div class="card-search"> -->
 <!-- post情報として送るFormを生成 -->
     <body>
@@ -113,8 +113,6 @@
                         <?= $this->Paginator->next('>>') ?>
                     </ul>
                 </div>
-
-                <!-- </div> -->
                 <div class="results">
                     <div class="cards-index-content">
                         <!-- <?= __('カード') ?> -->
