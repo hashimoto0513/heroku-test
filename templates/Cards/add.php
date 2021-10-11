@@ -23,7 +23,7 @@
                     // echo $this->Form->control('version_id');
                     echo $this->Form->label('収録弾');
                     echo $this->Form->select('version_id',$names);
-                    echo $this->Form->select('version_id',$versions);
+                    echo $this->Form->select('version_id',$versions,['class' => 'add_short_ver']);
                     echo $this->Form->control('CardNumber',['label' => 'カードNo.']);
                     echo $this->Form->control('CardName',['label' => 'カード名']);
                     echo $this->Form->label('色');

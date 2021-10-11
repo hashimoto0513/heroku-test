@@ -15,7 +15,7 @@
             <h1 class="site-title"><a href="">デジモンカード検索</a></h1>
             <nav class="header-nav">
                 <ul class="nav-list">
-                    <li class="nav-item"><a href="">Edit</a></li>
+                    <li class="nav-item"><a href="/Cards/add">Add</a></li>
                     <li class="nav-item"><a href="/versions/index">Version</a></li>
                     <li class="nav-item"><a href="/Rarities/index">Rarty</a></li>
                 </ul>

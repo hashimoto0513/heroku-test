@@ -622,6 +622,9 @@ tr{
     font-size: 20px;
     cursor: pointer;
 }
+.add_short_ver{
+    margin-top: 10px;
+}
 /* .view table td{
     padding-left: 5px;
 }
