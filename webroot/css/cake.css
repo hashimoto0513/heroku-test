@@ -596,6 +596,32 @@ tr{
     border-radius: 5px;
 }
 
+/* /////*/
+/* add  */
+/* //// */
+
+.add-column-responsive {
+    width: 720px;
+}
+.add-wrapper select{
+    border-radius: 5px;
+    width: 700px;
+    height: 30px;
+    font-weight: bold;
+}
+.add-wrapper input{
+    width: 690px;
+    height: 20px;
+    font-weight: bold;
+}
+.add_button{
+    background-color: #fff;
+    border: solid 0.1rem black;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+}
 /* .view table td{
     padding-left: 5px;
 }

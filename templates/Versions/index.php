@@ -41,8 +41,8 @@
                     <thead>
                         <tr>
                             <th><?= $this->Paginator->sort('id') ?></th>
-                            <th><?= $this->Paginator->sort('name') ?></th>
-                            <th><?= $this->Paginator->sort('short_name') ?></th>
+                            <th><?= $this->Paginator->sort('収録弾名') ?></th>
+                            <th><?= $this->Paginator->sort('シリーズ名') ?></th>
                             <th class="actions"><?= __('Actions') ?></th>
                         </tr>
                     </thead>

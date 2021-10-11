@@ -4,35 +4,41 @@
  * @var \App\Model\Entity\Version $version
  */
 ?>
+<?php  $this->Html->css('cake', ['block' => true]); ?>
 <div class="row">
     <aside class="column">
         <div class="side-nav">
             <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('Edit Version'), ['action' => 'edit', $version->id], ['class' => 'side-nav-item']) ?>
-            <?= $this->Form->postLink(__('Delete Version'), ['action' => 'delete', $version->id], ['confirm' => __('Are you sure you want to delete # {0}?', $version->id), 'class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('List Versions'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('New Version'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('新規登録'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('リスト'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('編集'), ['action' => 'edit', $version->id], ['class' => 'side-nav-item']) ?>
+            <?= $this->Form->postLink(__('削除'), ['action' => 'delete', $version->id], ['confirm' => __('Are you sure you want to delete # {0}?', $version->id), 'class' => 'side-nav-item']) ?>
         </div>
     </aside>
     <div class="column-responsive column-80">
         <div class="versions view content">
-            <h3><?= h($version->name) ?></h3>
-            <table>
-                <tr>
-                    <th><?= __('Name') ?></th>
-                    <td><?= h($version->name) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Short Name') ?></th>
-                    <td><?= h($version->short_name) ?></td>
-                </tr>
-                <tr>
-                    <th><?= __('Id') ?></th>
-                    <td><?= $this->Number->format($version->id) ?></td>
-                </tr>
+            <!-- <h3><?= h($version->name) ?></h3> -->
+            <table class="view_table" cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td class="card_detail" colspan="6">カード詳細</td>
+                    </tr>
+                    <tr>
+                        <th class="view_td_name"><?= __('Name') ?></th>
+                        <td class="view_td_name"><?= h($version->name) ?></td>
+                    </tr>
+                    <tr>
+                        <th class="view_th_short_name"><?= __('Short Name') ?></th>
+                        <td class="view_td_short_name"><?= h($version->short_name) ?></td>
+                    </tr>
+                    <tr>
+                        <th class="view_th_id"><?= __('Id') ?></th>
+                        <td class="view_td_id"><?= $this->Number->format($version->id) ?></td>
+                    </tr>
+                </tbody>
             </table>
             <div class="related">
-                <h4><?= __('Related Cards') ?></h4>
+                <!-- <h4><?= __('Related Cards') ?></h4> -->
                 <?php if (!empty($version->cards)) : ?>
                 <div class="table-responsive">
                     <table>
