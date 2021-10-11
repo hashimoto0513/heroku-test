@@ -145,9 +145,9 @@
                                         <td class="cardlist_color"><?= h($card->color) ?></td>
                                         <td class="cardlist_cost"><?= h($card->cost) ?></td>
                                         <td class="actions">
-                                            <?= $this->Html->link(__('View'), ['action' => 'view', $card->id]) ?>
-                                            <?= $this->Html->link(__('Edit'), ['action' => 'edit', $card->id]) ?>
-                                            <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $card->id], ['confirm' => __('Are you sure you want to delete # {0}?', $card->id)]) ?>
+                                            <?= $this->Html->link(__('表示'), ['action' => 'view', $card->id]) ?>
+                                            <?= $this->Html->link(__('編集'), ['action' => 'edit', $card->id]) ?>
+                                            <?= $this->Form->postLink(__('削除'), ['action' => 'delete', $card->id], ['confirm' => __('Are you sure you want to delete # {0}?', $card->id)]) ?>
                                         </td>
                                     </tr>
                                     <?php endforeach; ?>

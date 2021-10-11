@@ -16,7 +16,7 @@
         <div class="rarities form content edit-wrapper">
             <?= $this->Form->create($rarity) ?>
             <fieldset>
-                <legend><?= __('レアリティ編集') ?></legend>
+                <legend><?= __('Edit Rarity') ?></legend>
                 <?php
                     echo $this->Form->control('rarity_name');
                     echo $this->Form->control('start_time');

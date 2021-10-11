@@ -16,7 +16,7 @@
         <div class="versions form content edit-wrapper">
             <?= $this->Form->create($version) ?>
             <fieldset>
-                <legend><?= __('収録弾編集') ?></legend>
+                <legend><?= __('Edit Version') ?></legend>
                 <?php
                     echo $this->Form->control('収録弾名');
                     echo $this->Form->control('シリーズ名');

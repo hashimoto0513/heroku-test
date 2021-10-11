@@ -16,7 +16,7 @@
         <div class="versions form content add-wrapper">
             <?= $this->Form->create($version) ?>
             <fieldset>
-                <legend><?= __('収録弾 登録') ?></legend>
+                <legend><?= __('Add Version') ?></legend>
                 <?php
                     echo $this->Form->control('name');
                     echo $this->Form->control('short_name');

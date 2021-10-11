@@ -50,9 +50,9 @@
                             <td><?= $this->Number->format($rarity->id) ?></td>
                             <td><?= h($rarity->rarity_name) ?></td>
                             <td class="actions">
-                                <?= $this->Html->link(__('View'), ['action' => 'view', $rarity->id]) ?>
-                                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $rarity->id]) ?>
-                                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $rarity->id], ['confirm' => __('Are you sure you want to delete # {0}?', $rarity->id)]) ?>
+                                <?= $this->Html->link(__('表示'), ['action' => 'view', $rarity->id]) ?>
+                                <?= $this->Html->link(__('編集'), ['action' => 'edit', $rarity->id]) ?>
+                                <?= $this->Form->postLink(__('削除'), ['action' => 'delete', $rarity->id], ['confirm' => __('Are you sure you want to delete # {0}?', $rarity->id)]) ?>
                             </td>
                         </tr>
                         <?php endforeach; ?>

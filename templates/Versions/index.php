@@ -53,9 +53,9 @@
                             <td><?= h($version->name) ?></td>
                             <td><?= h($version->short_name) ?></td>
                             <td class="actions">
-                                <?= $this->Html->link(__('View'), ['action' => 'view', $version->id]) ?>
-                                <?= $this->Html->link(__('Edit'), ['action' => 'edit', $version->id]) ?>
-                                <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $version->id], ['confirm' => __('Are you sure you want to delete # {0}?', $version->id)]) ?>
+                                <?= $this->Html->link(__('表示'), ['action' => 'view', $version->id]) ?>
+                                <?= $this->Html->link(__('編集'), ['action' => 'edit', $version->id]) ?>
+                                <?= $this->Form->postLink(__('削除'), ['action' => 'delete', $version->id], ['confirm' => __('Are you sure you want to delete # {0}?', $version->id)]) ?>
                             </td>
                         </tr>
                         <?php endforeach; ?>
