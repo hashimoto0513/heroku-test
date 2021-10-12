@@ -58,6 +58,7 @@ a {
 .nav-item a{
     color: #fff;
 }
+
 /* ハンバーガーボタン（メニューが開いていないとき） */
 .burger-btn{
     display: flex;
@@ -476,9 +477,10 @@ tr{
     font-size: 1rem;
     margin: 0 auto;
     width: 960px;
-
 }
-/* edit */
+/* //////////// */
+/* edit         */
+/* //////////// */
 .row{
     width: 720px;
     font-size: 13px;
@@ -486,7 +488,10 @@ tr{
     padding: 10px 20px;
     margin: 0 auto;
 }
-/* view */
+
+/* //////////// */
+/* view         */
+/* //////////// */
 .view_table{
     border-collapse: collapse;
 }

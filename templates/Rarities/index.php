@@ -10,9 +10,9 @@
         <h3><?= __('レアリティ') ?></h3>
         <nav class="header-nav">
             <ul class="nav-list">
-                <li class="nav-item"><a href="">Edit</a></li>
+                <li class="nav-item"><a href="/Cards/index">Card</a></li>
                 <li class="nav-item"><a href="/versions/index">Version</a></li>
-                <li class="nav-item"><a href="/Rarities/index">Rarty</a></li>
+                <li class="nav-item"><a href="">Rarty</a></li>
             </ul>
         </nav>
         <button class="burger-btn">
@@ -68,8 +68,9 @@
             <?= $this->Paginator->next('>>') ?>
         </ul>
     </div>
-    <footer>
+    <footer  class="footer">
+        <small>&copy; デジモンカード検索</small>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <?= $this->Html->script('script'); ?>
+    <?= $this->Html->script('version'); ?>
 </div>

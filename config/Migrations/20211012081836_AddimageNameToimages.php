@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 use Migrations\AbstractMigration;
 
-class AddFullDescriptionToCards extends AbstractMigration
+class AddimageNameToimages extends AbstractMigration
 {
     /**
      * Change Method.
@@ -14,11 +14,13 @@ class AddFullDescriptionToCards extends AbstractMigration
      */
     public function change()
     {
-        $table = $this->table('cards');
-        $table->addColumn('full_description', 'integer', [
-            'limit' => 1,
+        $table = $this->table('images');
+        $table->addColumn('image_name','string',[
+            'limit' => 20,
+            'default' => null,
             'null' => false,
-        ]);
+            ]);
+            $table->update();
         $table->update();
     }
 }

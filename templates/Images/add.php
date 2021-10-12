@@ -17,6 +17,8 @@
             <fieldset>
                 <legend><?= __('Add Image') ?></legend>
                 <?php
+                    echo $this->Form->file('img');
+                    echo $this->Form->control('image_name');
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

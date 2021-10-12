@@ -11,6 +11,8 @@ use Cake\Validation\Validator;
 /**
  * Images Model
  *
+ * @property \App\Model\Table\CardsTable&\Cake\ORM\Association\HasMany $Cards
+ *
  * @method \App\Model\Entity\Image newEmptyEntity()
  * @method \App\Model\Entity\Image newEntity(array $data, array $options = [])
  * @method \App\Model\Entity\Image[] newEntities(array $data, array $options = [])
@@ -40,6 +42,10 @@ class ImagesTable extends Table
         $this->setTable('images');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
+
+        $this->hasMany('Cards', [
+            'foreignKey' => 'image_id',
+        ]);
     }
 
     /**
@@ -55,8 +61,16 @@ class ImagesTable extends Table
             ->allowEmptyString('id', null, 'create');
 
         $validator
+            ->scalar('img')
+            ->maxLength('img', 30)
             ->requirePresence('img', 'create')
             ->notEmptyString('img');
+
+        $validator
+            ->scalar('image_name')
+            ->maxLength('image_name', 20)
+            ->requirePresence('image_name', 'create')
+            ->notEmptyFile('image_name');
 
         return $validator;
     }

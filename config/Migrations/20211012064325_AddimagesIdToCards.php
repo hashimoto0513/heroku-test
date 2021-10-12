@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 use Migrations\AbstractMigration;
 
-class CreateImages extends AbstractMigration
+class AddimagesIdToCards extends AbstractMigration
 {
     /**
      * Change Method.
@@ -14,12 +14,11 @@ class CreateImages extends AbstractMigration
      */
     public function change()
     {
-        $table = $this->table('images');
-        $table->addColumn('img', 'string', [
-            'default' => null,
-            'limit' => 30,
-            'null' => false,
+        $table = $this->table('cards');
+        $table->addColumn('image_id','integer',[
+        'default' => null,
+        'null' => false,
         ]);
-        $table->create();
+        $table->update();
     }
 }

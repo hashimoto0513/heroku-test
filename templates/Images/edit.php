@@ -22,6 +22,8 @@
             <fieldset>
                 <legend><?= __('Edit Image') ?></legend>
                 <?php
+                    echo $this->Form->control('img');
+                    echo $this->Form->control('image_name');
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

@@ -26,6 +26,7 @@ class CardsFixture extends TestFixture
         'modified' => ['type' => 'datetime', 'length' => null, 'precision' => null, 'null' => true, 'default' => null, 'comment' => ''],
         'version_id' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'rarity_id' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'image_id' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
         ],
@@ -49,10 +50,11 @@ class CardsFixture extends TestFixture
                 'CardName' => 'Lorem ipsum dolor sit amet',
                 'color' => 'Lo',
                 'cost' => 1,
-                'created' => '2021-09-15 00:42:56',
-                'modified' => '2021-09-15 00:42:56',
+                'created' => '2021-10-12 08:20:53',
+                'modified' => '2021-10-12 08:20:53',
                 'version_id' => 1,
                 'rarity_id' => 1,
+                'image_id' => 1,
             ],
         ];
         parent::init();

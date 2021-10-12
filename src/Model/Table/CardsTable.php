@@ -13,6 +13,7 @@ use Cake\Validation\Validator;
  *
  * @property \App\Model\Table\VersionsTable&\Cake\ORM\Association\BelongsTo $Versions
  * @property \App\Model\Table\RaritiesTable&\Cake\ORM\Association\BelongsTo $Rarities
+ * @property \App\Model\Table\ImagesTable&\Cake\ORM\Association\BelongsTo $Images
  *
  * @method \App\Model\Entity\Card newEmptyEntity()
  * @method \App\Model\Entity\Card newEntity(array $data, array $options = [])
@@ -56,6 +57,10 @@ class CardsTable extends Table
             'foreignKey' => 'rarity_id',
             'joinType' => 'INNER',
         ]);
+        $this->belongsTo('Images', [
+            'foreignKey' => 'image_id',
+            'joinType' => 'INNER',
+        ]);
     }
 
     /**
@@ -77,8 +82,7 @@ class CardsTable extends Table
         $validator
             ->scalar('CardName')
             ->maxLength('CardName', 30)
-            ->allowEmptyString('CardName')
-            ->add('CardName', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
+            ->allowEmptyString('CardName');
 
         $validator
             ->scalar('color')
@@ -103,9 +107,9 @@ class CardsTable extends Table
      */
     public function buildRules(RulesChecker $rules): RulesChecker
     {
-        $rules->add($rules->isUnique(['CardName']), ['errorField' => 'CardName']);
         $rules->add($rules->existsIn(['version_id'], 'Versions'), ['errorField' => 'version_id']);
         $rules->add($rules->existsIn(['rarity_id'], 'Rarities'), ['errorField' => 'rarity_id']);
+        $rules->add($rules->existsIn(['image_id'], 'Images'), ['errorField' => 'image_id']);
 
         return $rules;
     }

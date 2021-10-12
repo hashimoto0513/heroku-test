@@ -17,9 +17,11 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\FrozenTime|null $modified
  * @property int $version_id
  * @property int $rarity_id
+ * @property int $image_id
  *
  * @property \App\Model\Entity\Version $version
  * @property \App\Model\Entity\Rarity $rarity
+ * @property \App\Model\Entity\Image $image
  */
 class Card extends Entity
 {
@@ -41,7 +43,9 @@ class Card extends Entity
         'modified' => true,
         'version_id' => true,
         'rarity_id' => true,
+        'image_id' => true,
         'version' => true,
         'rarity' => true,
+        'image' => true,
     ];
 }

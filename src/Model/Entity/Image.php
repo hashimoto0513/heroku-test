@@ -9,7 +9,10 @@ use Cake\ORM\Entity;
  * Image Entity
  *
  * @property int $id
- * @property string|resource $img
+ * @property string $img
+ * @property string $image_name
+ *
+ * @property \App\Model\Entity\Card[] $cards
  */
 class Image extends Entity
 {
@@ -24,5 +27,7 @@ class Image extends Entity
      */
     protected $_accessible = [
         'img' => true,
+        'image_name' => true,
+        'cards' => true,
     ];
 }

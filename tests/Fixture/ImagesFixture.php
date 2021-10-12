@@ -18,7 +18,8 @@ class ImagesFixture extends TestFixture
     // phpcs:disable
     public $fields = [
         'id' => ['type' => 'integer', 'length' => null, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
-        'img' => ['type' => 'binary', 'length' => 16777215, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
+        'img' => ['type' => 'string', 'length' => 30, 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null],
+        'image_name' => ['type' => 'string', 'length' => 20, 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
         ],
@@ -39,6 +40,7 @@ class ImagesFixture extends TestFixture
             [
                 'id' => 1,
                 'img' => 'Lorem ipsum dolor sit amet',
+                'image_name' => 'Lorem ipsum dolor ',
             ],
         ];
         parent::init();

@@ -33,7 +33,7 @@ class ImagesController extends AppController
     public function view($id = null)
     {
         $image = $this->Images->get($id, [
-            'contain' => [],
+            'contain' => ['Cards'],
         ]);
 
         $this->set(compact('image'));

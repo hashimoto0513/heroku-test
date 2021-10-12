@@ -27,6 +27,7 @@ class CardsTableTest extends TestCase
         'app.Cards',
         'app.Versions',
         'app.Rarities',
+        'app.Images',
     ];
 
     /**
