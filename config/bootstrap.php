@@ -78,7 +78,8 @@ use Cake\Utility\Security;
  */
 try {
     Configure::config('default', new PhpConfig());
-    Configure::load('app', 'default', false);
+    Configure::load('app', 'default', false,"const");// constの定数ファイルを読み込み
+
 } catch (\Exception $e) {
     die($e->getMessage() . "\n");
 }

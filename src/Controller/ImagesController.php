@@ -2,7 +2,6 @@
 declare(strict_types=1);
 
 namespace App\Controller;
-
 /**
  * Images Controller
  *
@@ -46,16 +45,37 @@ class ImagesController extends AppController
      */
     public function add()
     {
+
         $image = $this->Images->newEmptyEntity();
-        if ($this->request->is('post')) {
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $gazou=$_FILES['img'];
+            // $file = $this->request->getData('img');input fileで送られたデータを受け取って$fileに入れる
+            $type = exif_imagetype($_FILES['img']['tmp_name']);
+            $chk = [
+                IMAGETYPE_GIF,
+                IMAGETYPE_JPEG,
+                IMAGETYPE_PNG,
+            ];
+            if(!in_array($type,$chk,true)){
+                if($gazou['size'] > 5000000){
+                    move_uploaded_file($file['tmp_name'], '../webroot/img/' . data("YmdHis") . $file['name']);
+                }else{
+                    echo '画像が大きすぎます.';
+                }
+            }else{
+                echo "画像ファイルではありません。";
+            }
             $image = $this->Images->patchEntity($image, $this->request->getData());
             if ($this->Images->save($image)) {
                 $this->Flash->success(__('The image has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
+
             }
             $this->Flash->error(__('The image could not be saved. Please, try again.'));
+
         }
+
         $this->set(compact('image'));
     }
 

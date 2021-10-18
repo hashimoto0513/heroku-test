@@ -21,7 +21,7 @@
                 <?php foreach ($images as $image): ?>
                 <tr>
                     <td><?= $this->Number->format($image->id) ?></td>
-                    <td><?= $this->Html->image($user->image, array('height' => 100, 'width' => 100)) ?></td>
+                    <td><?= h($image->img) ?></td>
                     <td><?= h($image->image_name) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $image->id]) ?>
