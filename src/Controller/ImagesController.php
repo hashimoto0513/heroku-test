@@ -50,7 +50,6 @@ class ImagesController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $gazou = $_FILES['img'];
             $type = exif_imagetype($_FILES['img']['tmp_name']);
-            // $time = date("YmdHis", time());
             $chk = [
                 IMAGETYPE_GIF,
                 IMAGETYPE_JPEG,
@@ -66,11 +65,11 @@ class ImagesController extends AppController
                 echo "画像ファイルではありません。";
             }
             $data = [
-                'img' =>  date("YmdHis") .$gazou['name'],
+                'img' =>  date("YmdHis") .$gazou['name'],  //同様の形でDBに入れる
                 'image_name' => $this->request->getData('image_name')
             ];
-            $image = $this->Images->newEmptyEntity($data);
-            // $image = $this->Images->patchEntity($image, $this->request->getData());
+            // $image = $this->Images->newEntity($data);
+            $image = $this->Images->patchEntity($image, $data);
             if ($this->Images->save($image)) {
                 $this->Flash->success(__('The image has been saved.'));
 
