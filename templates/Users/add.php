@@ -19,7 +19,7 @@
                 <?php
                     echo $this->Form->control('name');
                     echo $this->Form->control('password');
-                    echo $this->Form->control('image',['type' => 'file']);　　　　
+                    echo $this->Form->file('image');　　
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

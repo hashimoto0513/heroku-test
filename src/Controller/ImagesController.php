@@ -48,24 +48,29 @@ class ImagesController extends AppController
 
         $image = $this->Images->newEmptyEntity();
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $gazou=$_FILES['img'];
-            // $file = $this->request->getData('img');input fileで送られたデータを受け取って$fileに入れる
+            $gazou = $_FILES['img'];
             $type = exif_imagetype($_FILES['img']['tmp_name']);
+            // $time = date("YmdHis", time());
             $chk = [
                 IMAGETYPE_GIF,
                 IMAGETYPE_JPEG,
                 IMAGETYPE_PNG,
             ];
-            if(!in_array($type,$chk,true)){
-                if($gazou['size'] > 5000000){
-                    move_uploaded_file($file['tmp_name'], '../webroot/img/' . data("YmdHis") . $file['name']);
+            if(in_array($type,$chk,true)){
+                if($gazou['size'] < 5000000){
+                    move_uploaded_file($gazou['tmp_name'],'../webroot/img/'.date("YmdHis").$gazou['name']);
                 }else{
-                    echo '画像が大きすぎます.';
+                    echo '画像サイズが大きすぎます.';
                 }
             }else{
                 echo "画像ファイルではありません。";
             }
-            $image = $this->Images->patchEntity($image, $this->request->getData());
+            $data = [
+                'img' =>  date("YmdHis") .$gazou['name'],
+                'image_name' => $this->request->getData('image_name')
+            ];
+            $image = $this->Images->newEmptyEntity($data);
+            // $image = $this->Images->patchEntity($image, $this->request->getData());
             if ($this->Images->save($image)) {
                 $this->Flash->success(__('The image has been saved.'));
 
