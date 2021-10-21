@@ -61,10 +61,25 @@ class ImagesTable extends Table
             ->allowEmptyString('id', null, 'create');
 
         $validator
-            ->scalar('img')
-            ->maxLength('img', 30)
-            ->requirePresence('img', 'create')
-            ->notEmptyString('img');
+            ->scalar('img')//値の型を設定するために使います。scalerはテキスト型に設定します。
+            ->maxLength('img', 30)//スカラ値が指定した文字数以下か
+            ->allowEmpty('img')//空を許容する。3.7から非推奨
+            ->requirePresence('img', 'create')//フィールドに存在することを要求する。nullは許容する
+            // ->notEmptyString('img')//空を認めず、かつ文字列か
+            ->add('img', 'fileSize', [
+                'rule' => ['fileSize', '<', '1000000'],
+                'message' => '1Mバイト未満のファイルを選択してください',
+            ])
+            ->add('img', 'extension', [
+                'rule' => ['extension', ['jpg', 'png']],
+                'message' => '拡張子が jpg か png のファイルを選択してください',
+                'last' => true,
+            ]);
+            // ->add('img', 'mimeType', [
+            //     'rule' => ['mimeType', ['image/jpeg', 'image/png']],
+            //     'message' => 'JPEG か PNG 形式のファイルを選択してください',
+            // ]);
+
 
         $validator
             ->scalar('image_name')

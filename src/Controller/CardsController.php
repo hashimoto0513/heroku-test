@@ -170,6 +170,12 @@ class CardsController extends AppController
             'valueField' => 'rarity_name'
         ]);
 
+        $this->loadModel('Images');
+
+        $images = $this->Images->find('list',[
+            'keyField' => 'id',
+            'valueField' => 'img'
+        ]);
         $card = $this->Cards->newEmptyEntity();
         if ($this->request->is('post')) {
             $card = $this->Cards->patchEntity($card, $this->request->getData());
@@ -196,7 +202,7 @@ class CardsController extends AppController
             '白' => '白',
         ];
 
-        $this->set(compact('card','array','versions','names','options','rarities'));
+        $this->set(compact('card','array','versions','names','options','rarities','images'));
     }
 
     /**
