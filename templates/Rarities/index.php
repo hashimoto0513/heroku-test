@@ -13,6 +13,7 @@
                 <li class="nav-item"><a href="/Cards/index">Card</a></li>
                 <li class="nav-item"><a href="/versions/index">Version</a></li>
                 <li class="nav-item"><a href="">Rarty</a></li>
+                <li class="nav-item"><a href="/Images/index">Image</a></li>
             </ul>
         </nav>
         <button class="burger-btn">
@@ -34,7 +35,7 @@
         <?= $this->Html->link(__('New Rarity'), ['action' => 'add'], ['class' => 'button float-right']) ?>
     </div>
     <div class="results">
-        <div class="versions-index-content">
+        <div class="rarities-index-content">
             <div class="rarities_table-responsive">
                 <table class="table_rartylist">
                     <thead>

@@ -4,16 +4,45 @@
  * @var \App\Model\Entity\Image[]|\Cake\Collection\CollectionInterface $images
  */
 ?>
+<?php  $this->Html->css('images', ['block' => true]); ?>
 <div class="images index content">
-    <?= $this->Html->link(__('New Image'), ['action' => 'add'], ['class' => 'button float-right']) ?>
-    <h3><?= __('Images') ?></h3>
-    <div class="table-responsive">
-        <table>
-            <thead>
-                <tr>
-                    <th><?= $this->Paginator->sort('id') ?></th>
-                    <th><?= $this->Paginator->sort('image_name') ?></th>
-                    <th><?= $this->Paginator->sort('img') ?></th>
+    <div class="header">
+            <h3><?= __('イメージ') ?></h3>
+            <nav class="header-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="/Cards/index">Card</a></li>
+                    <li class="nav-item"><a href="/versions/index">Version</a></li>
+                    <li class="nav-item"><a href="/Rarities/index">Rarty</a></li>
+                    <li class="nav-item"><a href="">Image</a></li>
+                </ul>
+            </nav>
+            <button class="burger-btn">
+            <span class="bars">
+                <span class="bar bar_top"></span>
+                <span class="bar bar_mid"></span>
+                <span class="bar bar_bottom"></span>
+            </span>
+            <span class="menu">MENU</span>
+        </button>
+        <span class="burger-musk"></span>
+    </div>
+    <div class="pagination">
+        <ul class="pagination-wrapper">
+            <?= $this->Paginator->prev('<<') ?>
+            <?= $this->Paginator->numbers() ?>
+            <?= $this->Paginator->next('>>') ?>
+        </ul>
+        <?= $this->Html->link(__('New Image'), ['action' => 'add'], ['class' => 'button float-right']) ?>
+    </div>
+    <div class="results">
+        <div class="images-index-content">
+            <div class="images_table-responsive">
+                <table class="table_rartylist">
+                    <thead>
+                    <tr>
+                        <th><?= $this->Paginator->sort('id') ?></th>
+                        <th><?= $this->Paginator->sort('image_name') ?></th>
+                        <th class="th-img"><?= $this->Paginator->sort('img') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -22,7 +51,7 @@
                 <tr>
                     <td><?= $this->Number->format($image->id) ?></td>
                     <td><?= h($image->image_name) ?></td>
-                    <td><?= h($image->img) ?></td>
+                    <td><?= $this->Html->image($image->img,['class' => 'img']) ?></td>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $image->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $image->id]) ?>
@@ -33,14 +62,16 @@
             </tbody>
         </table>
     </div>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
+    <div class="pagination2">
+        <ul class="pagination2-wrapper">
+            <?= $this->Paginator->prev('<<') ?>
             <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
+            <?= $this->Paginator->next('>>') ?>
         </ul>
-        <p><?= $this->Paginator->counter(__('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')) ?></p>
     </div>
+    <footer  class="footer">
+        <small>&copy; デジモンカード検索</small>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <?= $this->Html->script('version'); ?>
 </div>

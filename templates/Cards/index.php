@@ -18,6 +18,7 @@
                     <li class="nav-item"><a href="/Cards/index">Card</a></li>
                     <li class="nav-item"><a href="/versions/index">Version</a></li>
                     <li class="nav-item"><a href="/Rarities/index">Rarty</a></li>
+                    <li class="nav-item"><a href="/Images/index">Image</a></li>
                 </ul>
             </nav>
             <button class="burger-btn">
