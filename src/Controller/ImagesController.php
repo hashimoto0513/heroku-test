@@ -77,6 +77,8 @@ class ImagesController extends AppController
             $this->Flash->error(__('The image could not be saved. Please, try again.'));
         }
         $this->set(compact('image'));
+
+        $this->log('ログの書き込みテスト');
     }
 
     /**
