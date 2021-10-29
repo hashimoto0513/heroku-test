@@ -492,6 +492,11 @@ tr{
 /* //////////// */
 /* view         */
 /* //////////// */
+.img_row{
+    width: 500px;
+    border: none;
+    margin: 0 auto;
+}
 .view_table{
     border-collapse: collapse;
 }
@@ -536,6 +541,20 @@ tr{
     font-weight: bold;
     border-collapse: collapse;
     width: 720px;
+}
+.img_detail{
+    background-color:#666;
+    color: #fff;
+    padding: 5px;
+    font-weight: bold;
+    border-collapse: collapse;
+    width: 500px;
+}
+.view_th_img{
+    width: 100px;
+}
+.view_td_img{
+    width: 400px;
 }
 /* /////*/
 /* edit */

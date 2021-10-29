@@ -4,35 +4,39 @@
  * @var \App\Model\Entity\Image $image
  */
 ?>
-<div class="row">
+<?php  $this->Html->css('cake', ['block' => true]); ?>
+<div class="img_row">
     <aside class="column">
         <div class="side-nav">
             <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('Edit Image'), ['action' => 'edit', $image->id], ['class' => 'side-nav-item']) ?>
-            <?= $this->Form->postLink(__('Delete Image'), ['action' => 'delete', $image->id], ['confirm' => __('Are you sure you want to delete # {0}?', $image->id), 'class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('List Images'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
-            <?= $this->Html->link(__('New Image'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('新規登録'), ['action' => 'add'], ['class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('リスト'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+            <?= $this->Html->link(__('編集'), ['action' => 'edit', $image->id], ['class' => 'side-nav-item']) ?>
+            <?= $this->Form->postLink(__('削除'), ['action' => 'delete', $image->id], ['confirm' => __('Are you sure you want to delete # {0}?', $image->id), 'class' => 'side-nav-item']) ?>
         </div>
     </aside>
     <div class="column-responsive column-80">
         <div class="images view content">
-            <h3><?= h($image->id) ?></h3>
-            <table>
+            <!-- <h3><?= h($image->id) ?></h3> -->
+            <table class="view_table" cellpadding="0" cellspacing="0">
                 <tr>
-                    <th><?= __('Img') ?></th>
-                    <td><?= h($image->img) ?></td>
+                    <td class="img_detail" colspan="6">カード詳細</td>
+                </tr>
+                <tr>
+                    <th><?= __('Id') ?></th>
+                    <td><?= $this->Number->format($image->id) ?></td>
                 </tr>
                 <tr>
                     <th><?= __('Image Name') ?></th>
                     <td><?= h($image->image_name) ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Id') ?></th>
-                    <td><?= $this->Number->format($image->id) ?></td>
+                    <th class="view_th_img"><?= __('Img') ?></th>
+                    <td class="view_td_img"><?= $this->Html->image($image->img,['class' => 'view_img']) ?></td>
                 </tr>
             </table>
             <div class="related">
-                <h4><?= __('Related Cards') ?></h4>
+                <!-- <h4><?= __('Related Cards') ?></h4> -->
                 <?php if (!empty($image->cards)) : ?>
                 <div class="table-responsive">
                     <table>

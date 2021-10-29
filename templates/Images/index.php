@@ -41,8 +41,8 @@
                     <thead>
                     <tr>
                         <th><?= $this->Paginator->sort('id') ?></th>
-                        <th><?= $this->Paginator->sort('image_name') ?></th>
-                        <th class="th-img"><?= $this->Paginator->sort('img') ?></th>
+                        <th><?= $this->Paginator->sort('イメージ名') ?></th>
+                        <th class="th-img"><?= $this->Paginator->sort('イメージ') ?></th>
                     <th class="actions"><?= __('Actions') ?></th>
                 </tr>
             </thead>
@@ -53,9 +53,9 @@
                     <td><?= h($image->image_name) ?></td>
                     <td><?= $this->Html->image($image->img,['class' => 'img']) ?></td>
                     <td class="actions">
-                        <?= $this->Html->link(__('View'), ['action' => 'view', $image->id]) ?>
-                        <?= $this->Html->link(__('Edit'), ['action' => 'edit', $image->id]) ?>
-                        <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $image->id], ['confirm' => __('Are you sure you want to delete # {0}?', $image->id)]) ?>
+                        <?= $this->Html->link(__('表示'), ['action' => 'view', $image->id]) ?>
+                        <?= $this->Html->link(__('編集'), ['action' => 'edit', $image->id]) ?>
+                        <?= $this->Form->postLink(__('削除'), ['action' => 'delete', $image->id], ['confirm' => __('Are you sure you want to delete # {0}?', $image->id)]) ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>
